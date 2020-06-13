@@ -1,0 +1,316 @@
+module composite(
+	CLOCK_50,
+	VGA_R,
+	VGA_G,
+	VGA_B,
+	VGA_CLK,
+	SW,
+	KEY,
+	LEDR,
+	LEDG,
+	VGA_BLANK_N,
+	VGA_SYNC_N,
+	HEX0,
+	HEX1,
+	HEX2);
+	
+// Ports
+input wire CLOCK_50;
+input wire [0:0] SW;
+input wire [3:0] KEY;
+output wire [7:0] VGA_R;
+output wire [7:0] VGA_G;
+output wire [7:0] VGA_B;
+output wire VGA_CLK;
+output wire [17:0] LEDR;
+output wire [7:0] LEDG;
+output wire VGA_BLANK_N;
+output wire VGA_SYNC_N;
+output wire [6:0] HEX0;
+output wire [6:0] HEX1;
+output wire [6:0] HEX2;
+
+// PLL Wires
+wire pll_reset;
+wire pixel_clock;
+wire pll_locked;
+
+// 7seg Wires
+wire seg1_rst;
+wire [6:0] seg1_out;
+wire seg2_rst;
+wire [6:0] seg2_out;
+wire seg3_rst;
+wire [6:0] seg3_out;
+
+// 7seg Registers
+reg [3:0] seg_ones;
+reg [3:0] seg_tens;g
+reg [3:0] seg_hunds;
+
+// Video Registers
+reg [15:0] pixel_count;
+reg [15:0] line_count;
+reg [0:0] even_field;
+reg [7:0] level;
+reg [8:0] active_data;
+
+// Video Assignments
+assign VGA_CLK = pixel_clock;
+assign VGA_R[7:0] = level;
+assign VGA_G[7:0] = level;
+assign VGA_B[7:0] = level;
+assign LEDG[7:0] = level;
+assign LEDR[7:0] = active_data;
+assign LEDR[17] = pll_locked;
+
+// 7seg Assignments
+assign HEX0[6:0] = seg1_out[6:0];
+assign HEX1[6:0] = seg2_out[6:0];
+assign HEX2[6:0] = seg3_out[6:0];
+
+// Constant Assignments
+assign VGA_BLANK_N = 1;
+assign VGA_SYNC_N = 1;
+
+
+// Modules
+pll clk(pll_reset, CLOCK_50, pixel_clock, pll_locked);
+segment seg1(seg1_rst, CLOCK_50, seg1_out, seg_ones);
+segment seg2(seg2_rst, CLOCK_50, seg2_out, seg_tens);
+segment seg3(seg3_rst, CLOCK_50, seg3_out, seg_hunds);
+
+
+// Initial Settings
+initial begin
+	pixel_count = 1;
+	line_count = 1;
+	level = 0;
+	active_data = 255;
+	
+	seg_ones = 0;
+	seg_tens = 0;
+	seg_hunds = 0;
+end
+
+
+// Video Output
+always @(negedge pixel_clock) begin
+
+	// Line terminator
+	if (pixel_count == 401) begin
+		pixel_count = 1;
+		line_count = line_count + 1;
+	end
+
+	// Even field terminator
+	if (even_field == 1 && line_count == 263) begin
+		line_count = 1;
+		pixel_count = 1;
+		even_field = 0;
+	end
+	
+	// Odd field terminator
+	if (even_field == 0 && line_count == 264) begin
+		pixel_count = 1;
+		line_count = 1;
+		even_field = 1;
+	end
+	
+	// Equalizing Pulses -- Even Field
+	if (even_field == 1 && (line_count >= 1 && line_count < 4) ||
+		(line_count >= 7 && line_count < 10)) begin
+		
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 14)
+			level = 59;
+			
+		if (pixel_count == 200)
+			level = 0;
+			
+		if (pixel_count == 214)
+			level = 59;
+		
+	end
+	
+	// Serrated Pulses -- Even Field
+	if (even_field == 1 && line_count >= 4 && line_count < 7) begin
+	
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 171)
+			level = 59;
+			
+		if (pixel_count == 201)
+			level = 0;
+		
+		if (pixel_count == 371)
+			level = 59;
+	
+	end
+	
+	// Blanked lines -- Even Field
+	if (even_field == 1 && line_count >= 10 && line_count < 20) begin
+	
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 30) 
+			level = 59;
+			
+	end
+	
+	// Active lines -- Even Field
+	if (even_field == 1 && line_count >= 20 && line_count < 263) begin
+		
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 30)
+			level = 59;
+		
+		// (Active Data Here)
+		if (pixel_count >= 58 && pixel_count <= 390) begin
+		
+			if (SW[0])
+				active_data = active_data + 1;
+			
+			if (active_data == 200)
+				active_data = 75;
+
+			level = active_data;
+			
+		end
+			
+		if (pixel_count == 391)
+			level = 59;
+		
+	end
+	
+	
+	// Equalizing Pulses -- Odd field
+	if (even_field == 0 && (line_count >= 1 && line_count < 3) ||
+		(line_count >= 7 && line_count < 9)) begin
+	
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 14)
+			level = 59;
+			
+		if (pixel_count == 200)
+			level = 0;
+			
+		if (pixel_count == 214)
+			level = 59;
+	
+	end
+	
+	// Odd Field Line 3 Odd Pulse
+	if (even_field == 0 && line_count == 3) begin
+	
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 14)
+			level = 59;
+			
+		if (pixel_count == 200)
+			level = 0;
+			
+		if (pixel_count == 371)
+			level = 59;
+	
+	end
+	
+	// Serrated Pulses -- Odd field
+	if (even_field == 0 && line_count >= 4 && line_count < 6) begin
+		
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 171)
+			level = 59;
+			
+		if (pixel_count == 201)
+			level = 0;
+		
+		if (pixel_count == 371)
+			level = 59;
+	
+	end
+	
+	//  Odd Field Line 6 Odd Pulse
+	if (even_field == 0 && line_count == 6) begin
+	
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 171)
+			level = 59;
+			
+		if (pixel_count == 201)
+			level = 0;
+			
+		if (pixel_count == 214)
+			level = 59;
+	
+	end
+	
+	// Odd Field Blanked Lines
+	if (even_field == 0 && line_count >= 10 && line_count < 20) begin
+		
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 30) 
+			level = 59;
+		
+	end
+	
+	// Active lines -- Odd Field
+	if (even_field == 0 && line_count >= 20 && line_count < 263) begin
+		
+		if (pixel_count == 1)
+			level = 0;
+			
+		if (pixel_count == 30)
+			level = 59;
+		
+		// (Active Data Here)
+		if (pixel_count >= 58 && pixel_count <= 390) begin
+		
+			if (SW[0])
+				active_data = active_data + 1;
+			
+			if (active_data == 200)
+				active_data = 75;
+
+			level = active_data;
+			
+		end
+			
+		if (pixel_count == 391)
+			level = 59;
+		
+	end
+	
+	// Increment pixel count every clock
+	pixel_count = pixel_count + 1;
+	
+	if (KEY[0])
+		active_data = active_data + 1;
+	
+	if (KEY[1])
+		active_data = active_data - 1;
+	
+	seg_ones = ((active_data % 1000) % 100);
+	seg_tens = (active_data % 1000) / 10;
+	seg_hunds = active_data / 100;
+
+end
+
+endmodule

@@ -1,0 +1,52 @@
+module segment(reset, clock, out, data);
+
+// I/O
+input wire reset;
+input wire clock;
+output wire [6:0] out;
+input wire [3:0] data;
+
+// Registers
+reg [6:0] display;
+
+// Assignments
+assign out[6:0] = display[6:0];
+
+// 6 5 4 3 2 1 0
+// 1 == OFF
+
+always @(posedge clock) begin
+
+	if (data == 0)
+		display = 'b1000000;
+		
+	if (data == 1)
+		display = 'b1111001;
+		
+	if (data == 2)
+		display = 'b0100100;
+		
+	if (data == 3)
+		display = 'b0110000;
+	
+	if (data == 4)
+		display = 'b0011001;
+	
+	if (data == 5)
+		display = 'b0010010;
+	
+	if (data == 6)
+		display = 'b0000010;
+	
+	if (data == 7)
+		display = 'b1111000;
+	
+	if (data == 8)
+		display = 'b0000000;
+	
+	if (data == 9)
+		display = 'b0010000;
+
+end
+
+endmodule
