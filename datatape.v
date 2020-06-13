@@ -128,7 +128,7 @@ reg [0:0] hex_enable;
 reg [0:0] vsync;
 reg [0:0] input_ready;
 reg [7:0] data_in;
-reg [0:0] input_sample_clk;
+reg [0:0] input_sample_ready;
 
 // Ethernet MAC Registers
 wire [0:0] ethernet0_rst;
@@ -169,9 +169,9 @@ video_out out(output_px_clk,
 				  VGA_SYNC_N);
 
 video_in in(TD_CLK27, 
-				input_sample_clk, 
+				input_sample_ready, 
 				TD_DATA, 
-				data_in, 
+				data_in,
 				input_ready);
 
 // 7 segment displays
@@ -213,30 +213,42 @@ always @(negedge output_px_clk) begin
 
 	// Create symbol from packet
 	
-	data_out = 120;
+	if (SW[1]) begin
+		data_out = data_out + 1;
+		
+		if (data_out >= 255)
+			data_out = 42;
+			
+	end
+	
+	if (SW[1]) begin
+		segment_6 = data_out[3:0];
+		segment_7 = data_out[7:4];
+	end
 	
 end
 
 // Input Video
-always @(negedge input_sample_clk) begin
+always @(posedge TD_CLK27) begin
 
 	// Create and send the packet
+	
+	if (SW[0]) begin
+		segment_4 = data_in[3:0];
+		segment_5 = data_in[7:4];
+	end
 
 end
 
 // 7 Segment Displays
-always @(negedge output_px_clk) begin
+always @(negedge CLOCK_50) begin
 
 	hex_enable = 1;
 	segment_0 = 'h10;
 	segment_1 = 'h10;
 	segment_2 = 'h10;
 	segment_3 = 'h10;
-	segment_4 = data_in[3:0];
-	segment_5 = data_in[7:4];
-	segment_6 = data_out[3:0];
-	segment_7 = data_out[7:4];
-
+		
 end
 
 endmodule
