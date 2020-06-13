@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri Jun 12 21:10:03 2020
+Analysis & Synthesis Status : Successful - Sat Jun 13 01:45:01 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : datatape
 Top-level Entity Name : datatape
 Family : Cyclone IV E
-Total logic elements : 196
-    Total combinational functions : 196
+Total logic elements : 183
+    Total combinational functions : 183
     Dedicated logic registers : 39
 Total registers : 39
 Total pins : 165

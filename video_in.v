@@ -23,7 +23,7 @@ module video_in(clkin,
 // I/O
 input wire clkin;
 input wire [7:0] td_in;
-output reg [4:0] data_out;
+output reg [7:0] data_out;
 output reg [0:0] sample_clk;
 output reg [0:0] data_ready;
 
@@ -185,6 +185,8 @@ always @(posedge sample_clk) begin // DECODER BEGINS HERE
 	// Determine if data is invalid at the end of the sequence 
 	if (begin_data == 2)
 		data_ready = 0;
+		
+	data_out = combined_sample;
 	
 end // DECODER ENDS HERE
 

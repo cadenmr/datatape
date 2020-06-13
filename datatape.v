@@ -213,12 +213,12 @@ always @(negedge output_px_clk) begin
 
 	// Create symbol from packet
 	
-	data_out = 255;
+	data_out = 120;
 	
 end
 
 // Input Video
-always @(negedge input_sample_clk && input_ready) begin
+always @(negedge input_sample_clk) begin
 
 	// Create and send the packet
 
@@ -228,14 +228,14 @@ end
 always @(negedge output_px_clk) begin
 
 	hex_enable = 1;
-	segment_0 = data_out[3:0];
-	segment_1 = 'he;
-	segment_2 = 'hd;
-	segment_3 = 'hc;
-	segment_4 = 'hb;
-	segment_5 = 'hb;
-	segment_6 = 'ha;
-	segment_7 = 'ha;
+	segment_0 = 'h10;
+	segment_1 = 'h10;
+	segment_2 = 'h10;
+	segment_3 = 'h10;
+	segment_4 = data_in[3:0];
+	segment_5 = data_in[7:4];
+	segment_6 = data_out[3:0];
+	segment_7 = data_out[7:4];
 
 end
 
