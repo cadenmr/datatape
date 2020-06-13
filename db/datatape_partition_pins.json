@@ -24,6 +24,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_R[5]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_R[6]",
 					"strict" : false
 				},
@@ -49,6 +53,10 @@
 				},
 				{
 					"name" : "VGA_G[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[5]",
 					"strict" : false
 				},
 				{
@@ -80,6 +88,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_B[5]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_B[6]",
 					"strict" : false
 				},
@@ -89,6 +101,134 @@
 				},
 				{
 					"name" : "VGA_SYNC_N",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_CLK27",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[4]",
 					"strict" : false
 				}
 			]

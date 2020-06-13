@@ -1,5 +1,5 @@
 Analysis & Synthesis report for datatape
-Fri Jun 12 21:10:03 2020
+Sat Jun 13 13:36:42 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -63,15 +63,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 12 21:10:03 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 13 13:36:42 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; datatape                                    ;
 ; Top-level Entity Name              ; datatape                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 196                                         ;
-;     Total combinational functions  ; 196                                         ;
-;     Dedicated logic registers      ; 39                                          ;
-; Total registers                    ; 39                                          ;
+; Total logic elements               ; 355                                         ;
+;     Total combinational functions  ; 351                                         ;
+;     Dedicated logic registers      ; 125                                         ;
+; Total registers                    ; 125                                         ;
 ; Total pins                         ; 165                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -179,7 +179,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -202,39 +203,39 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                ;
-+---------------------------------------------+------------------------------+
-; Resource                                    ; Usage                        ;
-+---------------------------------------------+------------------------------+
-; Estimated Total logic elements              ; 196                          ;
-;                                             ;                              ;
-; Total combinational functions               ; 196                          ;
-; Logic element usage by number of LUT inputs ;                              ;
-;     -- 4 input functions                    ; 110                          ;
-;     -- 3 input functions                    ; 55                           ;
-;     -- <=2 input functions                  ; 31                           ;
-;                                             ;                              ;
-; Logic elements by mode                      ;                              ;
-;     -- normal mode                          ; 167                          ;
-;     -- arithmetic mode                      ; 29                           ;
-;                                             ;                              ;
-; Total registers                             ; 39                           ;
-;     -- Dedicated logic registers            ; 39                           ;
-;     -- I/O registers                        ; 0                            ;
-;                                             ;                              ;
-; I/O pins                                    ; 165                          ;
-;                                             ;                              ;
-; Embedded Multiplier 9-bit elements          ; 0                            ;
-;                                             ;                              ;
-; Total PLLs                                  ; 1                            ;
-;     -- PLLs                                 ; 1                            ;
-;                                             ;                              ;
-; Maximum fan-out node                        ; video_out:out|pixel_count~15 ;
-; Maximum fan-out                             ; 44                           ;
-; Total fan-out                               ; 940                          ;
-; Average fan-out                             ; 1.66                         ;
-+---------------------------------------------+------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                 ;
++---------------------------------------------+-------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                         ;
++---------------------------------------------+-------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 355                                                                           ;
+;                                             ;                                                                               ;
+; Total combinational functions               ; 351                                                                           ;
+; Logic element usage by number of LUT inputs ;                                                                               ;
+;     -- 4 input functions                    ; 217                                                                           ;
+;     -- 3 input functions                    ; 90                                                                            ;
+;     -- <=2 input functions                  ; 44                                                                            ;
+;                                             ;                                                                               ;
+; Logic elements by mode                      ;                                                                               ;
+;     -- normal mode                          ; 290                                                                           ;
+;     -- arithmetic mode                      ; 61                                                                            ;
+;                                             ;                                                                               ;
+; Total registers                             ; 125                                                                           ;
+;     -- Dedicated logic registers            ; 125                                                                           ;
+;     -- I/O registers                        ; 0                                                                             ;
+;                                             ;                                                                               ;
+; I/O pins                                    ; 165                                                                           ;
+;                                             ;                                                                               ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                             ;
+;                                             ;                                                                               ;
+; Total PLLs                                  ; 1                                                                             ;
+;     -- PLLs                                 ; 1                                                                             ;
+;                                             ;                                                                               ;
+; Maximum fan-out node                        ; pll:clocks|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 73                                                                            ;
+; Total fan-out                               ; 1749                                                                          ;
+; Average fan-out                             ; 2.16                                                                          ;
++---------------------------------------------+-------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -242,11 +243,15 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name ; Library Name ;
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------+--------------+
-; |datatape                            ; 196 (0)             ; 39 (0)                    ; 0           ; 0            ; 0       ; 0         ; 165  ; 0            ; |datatape                                                              ; datatape    ; work         ;
+; |datatape                            ; 351 (15)            ; 125 (12)                  ; 0           ; 0            ; 0       ; 0         ; 165  ; 0            ; |datatape                                                              ; datatape    ; work         ;
 ;    |pll:clocks|                      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|pll:clocks                                                   ; pll         ; work         ;
 ;       |altpll:altpll_component|      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|pll:clocks|altpll:altpll_component                           ; altpll      ; work         ;
 ;          |pll_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|pll:clocks|altpll:altpll_component|pll_altpll:auto_generated ; pll_altpll  ; work         ;
-;    |video_out:out|                   ; 196 (196)           ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|video_out:out                                                ; video_out   ; work         ;
+;    |segment:hex4|                    ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|segment:hex4                                                 ; segment     ; work         ;
+;    |segment:hex6|                    ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|segment:hex6                                                 ; segment     ; work         ;
+;    |segment:hex7|                    ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|segment:hex7                                                 ; segment     ; work         ;
+;    |video_in:in|                     ; 126 (126)           ; 50 (50)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|video_in:in                                                  ; video_in    ; work         ;
+;    |video_out:out|                   ; 189 (189)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datatape|video_out:out                                                ; video_out   ; work         ;
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -276,104 +281,72 @@ Encoding Type:  One-Hot
 +-----------------------------------------+----------------------------------------+
 ; Register name                           ; Reason for Removal                     ;
 +-----------------------------------------+----------------------------------------+
-; segment_7[2]                            ; Stuck at GND due to stuck port data_in ;
-; segment_7[1]                            ; Stuck at VCC due to stuck port data_in ;
-; segment_7[0]                            ; Stuck at GND due to stuck port data_in ;
-; data_out[0]                             ; Stuck at VCC due to stuck port data_in ;
-; segment_7[3]                            ; Stuck at VCC due to stuck port data_in ;
-; segment_7[4..6]                         ; Stuck at GND due to stuck port data_in ;
-; segment_6[0]                            ; Stuck at GND due to stuck port data_in ;
-; segment_6[1]                            ; Stuck at VCC due to stuck port data_in ;
-; segment_6[2]                            ; Stuck at GND due to stuck port data_in ;
-; segment_6[3]                            ; Stuck at VCC due to stuck port data_in ;
-; segment_6[4..6]                         ; Stuck at GND due to stuck port data_in ;
-; segment_5[0,1]                          ; Stuck at VCC due to stuck port data_in ;
-; segment_5[2]                            ; Stuck at GND due to stuck port data_in ;
-; segment_5[3]                            ; Stuck at VCC due to stuck port data_in ;
-; segment_5[4..6]                         ; Stuck at GND due to stuck port data_in ;
-; segment_4[0,1]                          ; Stuck at VCC due to stuck port data_in ;
-; segment_4[2]                            ; Stuck at GND due to stuck port data_in ;
-; segment_4[3]                            ; Stuck at VCC due to stuck port data_in ;
-; segment_4[4..6]                         ; Stuck at GND due to stuck port data_in ;
-; segment_3[0,1]                          ; Stuck at GND due to stuck port data_in ;
-; segment_3[2,3]                          ; Stuck at VCC due to stuck port data_in ;
-; segment_3[4..6]                         ; Stuck at GND due to stuck port data_in ;
-; segment_2[0]                            ; Stuck at VCC due to stuck port data_in ;
-; segment_2[1]                            ; Stuck at GND due to stuck port data_in ;
-; segment_2[2,3]                          ; Stuck at VCC due to stuck port data_in ;
-; segment_2[4..6]                         ; Stuck at GND due to stuck port data_in ;
-; segment_1[0]                            ; Stuck at GND due to stuck port data_in ;
-; segment_1[1..3]                         ; Stuck at VCC due to stuck port data_in ;
-; segment_1[4..6]                         ; Stuck at GND due to stuck port data_in ;
-; segment_0[0]                            ; Stuck at VCC due to stuck port data_in ;
-; segment_0[4..6]                         ; Stuck at GND due to stuck port data_in ;
+; segment_0[5,6]                          ; Stuck at GND due to stuck port data_in ;
+; segment_0[4]                            ; Stuck at VCC due to stuck port data_in ;
+; segment_0[0..3]                         ; Stuck at GND due to stuck port data_in ;
+; segment_1[5,6]                          ; Stuck at GND due to stuck port data_in ;
+; segment_1[4]                            ; Stuck at VCC due to stuck port data_in ;
+; segment_1[0..3]                         ; Stuck at GND due to stuck port data_in ;
+; segment_2[5,6]                          ; Stuck at GND due to stuck port data_in ;
+; segment_2[4]                            ; Stuck at VCC due to stuck port data_in ;
+; segment_2[0..3]                         ; Stuck at GND due to stuck port data_in ;
+; segment_3[5,6]                          ; Stuck at GND due to stuck port data_in ;
+; segment_3[4]                            ; Stuck at VCC due to stuck port data_in ;
+; segment_3[0..3]                         ; Stuck at GND due to stuck port data_in ;
 ; hex_enable[0]                           ; Stuck at VCC due to stuck port data_in ;
-; data_out[1..7]                          ; Stuck at VCC due to stuck port data_in ;
-; segment_0[1..3]                         ; Stuck at VCC due to stuck port data_in ;
-; segment:hex7|display[0..2]              ; Stuck at GND due to stuck port data_in ;
-; segment:hex7|display[3]                 ; Stuck at VCC due to stuck port data_in ;
-; segment:hex7|display[4..6]              ; Stuck at GND due to stuck port data_in ;
-; segment:hex6|display[0..2]              ; Stuck at GND due to stuck port data_in ;
-; segment:hex6|display[3]                 ; Stuck at VCC due to stuck port data_in ;
-; segment:hex6|display[4..6]              ; Stuck at GND due to stuck port data_in ;
-; segment:hex5|display[0,1]               ; Stuck at VCC due to stuck port data_in ;
-; segment:hex5|display[2..6]              ; Stuck at GND due to stuck port data_in ;
-; segment:hex4|display[0,1]               ; Stuck at VCC due to stuck port data_in ;
-; segment:hex4|display[2..6]              ; Stuck at GND due to stuck port data_in ;
-; segment:hex3|display[0..2]              ; Stuck at VCC due to stuck port data_in ;
-; segment:hex3|display[3,4]               ; Stuck at GND due to stuck port data_in ;
-; segment:hex3|display[5]                 ; Stuck at VCC due to stuck port data_in ;
+; segment_5[4..6]                         ; Stuck at GND due to stuck port data_in ;
+; segment_4[4..6]                         ; Stuck at GND due to stuck port data_in ;
+; segment_7[4..6]                         ; Stuck at GND due to stuck port data_in ;
+; segment_6[4..6]                         ; Stuck at GND due to stuck port data_in ;
+; segment:hex3|display[0..5]              ; Stuck at VCC due to stuck port data_in ;
 ; segment:hex3|display[6]                 ; Stuck at GND due to stuck port data_in ;
-; segment:hex2|display[0]                 ; Stuck at VCC due to stuck port data_in ;
-; segment:hex2|display[1..4]              ; Stuck at GND due to stuck port data_in ;
-; segment:hex2|display[5]                 ; Stuck at VCC due to stuck port data_in ;
+; segment:hex2|display[0..5]              ; Stuck at VCC due to stuck port data_in ;
 ; segment:hex2|display[6]                 ; Stuck at GND due to stuck port data_in ;
-; segment:hex1|display[0]                 ; Stuck at GND due to stuck port data_in ;
-; segment:hex1|display[1,2]               ; Stuck at VCC due to stuck port data_in ;
-; segment:hex1|display[3..6]              ; Stuck at GND due to stuck port data_in ;
-; segment:hex0|display[0]                 ; Stuck at GND due to stuck port data_in ;
-; segment:hex0|display[1..3]              ; Stuck at VCC due to stuck port data_in ;
-; segment:hex0|display[4..6]              ; Stuck at GND due to stuck port data_in ;
+; segment:hex1|display[0..5]              ; Stuck at VCC due to stuck port data_in ;
+; segment:hex1|display[6]                 ; Stuck at GND due to stuck port data_in ;
+; segment:hex0|display[0..5]              ; Stuck at VCC due to stuck port data_in ;
+; segment:hex0|display[6]                 ; Stuck at GND due to stuck port data_in ;
+; video_in:in|combined_sample[10..31]     ; Stuck at GND due to stuck port data_in ;
+; video_in:in|data_out[4,6,7]             ; Merged with video_in:in|data_out[5]    ;
+; segment_6[0]                            ; Merged with data_out[0]                ;
+; segment_6[1]                            ; Merged with data_out[1]                ;
+; segment_6[2]                            ; Merged with data_out[2]                ;
+; segment_6[3]                            ; Merged with data_out[3]                ;
+; segment_7[0]                            ; Merged with data_out[4]                ;
+; segment_7[1]                            ; Merged with data_out[5]                ;
+; segment_7[2]                            ; Merged with data_out[6]                ;
+; segment_7[3]                            ; Merged with data_out[7]                ;
+; segment_5[1..3]                         ; Merged with segment_5[0]               ;
 ; video_out:out|line_control_enabled[0]   ; Stuck at GND due to stuck port data_in ;
-; video_out:out|video_out[5]              ; Stuck at VCC due to stuck port data_in ;
-; video_out:out|video_out[6,7]            ; Merged with video_out:out|video_out[2] ;
-; Total Number of Removed Registers = 125 ;                                        ;
+; video_in:in|data_out[5]                 ; Stuck at GND due to stuck port data_in ;
+; segment_5[0]                            ; Stuck at GND due to stuck port data_in ;
+; segment:hex5|display[0..5]              ; Stuck at GND due to stuck port data_in ;
+; segment:hex5|display[6]                 ; Stuck at VCC due to stuck port data_in ;
+; video_in:in|sample_counter[3..7]        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 120 ;                                        ;
 +-----------------------------------------+----------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                            ;
-+---------------+---------------------------+----------------------------------------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register                                     ;
-+---------------+---------------------------+----------------------------------------------------------------------------+
-; hex_enable[0] ; Stuck at VCC              ; segment:hex7|display[0], segment:hex7|display[1], segment:hex7|display[2], ;
-;               ; due to stuck port data_in ; segment:hex7|display[3], segment:hex7|display[4], segment:hex7|display[5], ;
-;               ;                           ; segment:hex7|display[6], segment:hex6|display[0], segment:hex6|display[1], ;
-;               ;                           ; segment:hex6|display[2], segment:hex6|display[3], segment:hex6|display[4], ;
-;               ;                           ; segment:hex6|display[5], segment:hex6|display[6], segment:hex5|display[0], ;
-;               ;                           ; segment:hex5|display[1], segment:hex5|display[2], segment:hex5|display[3], ;
-;               ;                           ; segment:hex5|display[4], segment:hex5|display[5], segment:hex5|display[6], ;
-;               ;                           ; segment:hex4|display[0], segment:hex4|display[1], segment:hex4|display[2], ;
-;               ;                           ; segment:hex4|display[3], segment:hex4|display[4], segment:hex4|display[5], ;
-;               ;                           ; segment:hex4|display[6], segment:hex3|display[0], segment:hex3|display[1], ;
-;               ;                           ; segment:hex3|display[2], segment:hex3|display[3], segment:hex3|display[4], ;
-;               ;                           ; segment:hex3|display[5], segment:hex3|display[6], segment:hex2|display[0], ;
-;               ;                           ; segment:hex2|display[1], segment:hex2|display[2], segment:hex2|display[3], ;
-;               ;                           ; segment:hex2|display[4], segment:hex2|display[5], segment:hex2|display[6], ;
-;               ;                           ; segment:hex1|display[0], segment:hex1|display[1], segment:hex1|display[2], ;
-;               ;                           ; segment:hex1|display[3], segment:hex1|display[4], segment:hex1|display[5], ;
-;               ;                           ; segment:hex1|display[6], segment:hex0|display[0], segment:hex0|display[1], ;
-;               ;                           ; segment:hex0|display[2], segment:hex0|display[3], segment:hex0|display[4], ;
-;               ;                           ; segment:hex0|display[5], segment:hex0|display[6]                           ;
-; data_out[0]   ; Stuck at VCC              ; segment_0[0]                                                               ;
-;               ; due to stuck port data_in ;                                                                            ;
-; data_out[1]   ; Stuck at VCC              ; segment_0[1]                                                               ;
-;               ; due to stuck port data_in ;                                                                            ;
-; data_out[2]   ; Stuck at VCC              ; segment_0[2]                                                               ;
-;               ; due to stuck port data_in ;                                                                            ;
-; data_out[3]   ; Stuck at VCC              ; segment_0[3]                                                               ;
-;               ; due to stuck port data_in ;                                                                            ;
-+---------------+---------------------------+----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                      ;
++-------------------------+---------------------------+----------------------------------------------------------------------------+
+; Register name           ; Reason for Removal        ; Registers Removed due to This Register                                     ;
++-------------------------+---------------------------+----------------------------------------------------------------------------+
+; hex_enable[0]           ; Stuck at VCC              ; segment:hex3|display[0], segment:hex3|display[1], segment:hex3|display[2], ;
+;                         ; due to stuck port data_in ; segment:hex3|display[3], segment:hex3|display[4], segment:hex3|display[5], ;
+;                         ;                           ; segment:hex3|display[6], segment:hex2|display[0], segment:hex2|display[1], ;
+;                         ;                           ; segment:hex2|display[2], segment:hex2|display[3], segment:hex2|display[4], ;
+;                         ;                           ; segment:hex2|display[5], segment:hex2|display[6], segment:hex1|display[0], ;
+;                         ;                           ; segment:hex1|display[1], segment:hex1|display[2], segment:hex1|display[3], ;
+;                         ;                           ; segment:hex1|display[4], segment:hex1|display[5], segment:hex1|display[6], ;
+;                         ;                           ; segment:hex0|display[0], segment:hex0|display[1], segment:hex0|display[2], ;
+;                         ;                           ; segment:hex0|display[3], segment:hex0|display[4], segment:hex0|display[5], ;
+;                         ;                           ; segment:hex0|display[6], segment:hex5|display[0], segment:hex5|display[1], ;
+;                         ;                           ; segment:hex5|display[2], segment:hex5|display[3], segment:hex5|display[4], ;
+;                         ;                           ; segment:hex5|display[5], segment:hex5|display[6]                           ;
+; video_in:in|data_out[5] ; Stuck at GND              ; segment_5[0]                                                               ;
+;                         ; due to stuck port data_in ;                                                                            ;
++-------------------------+---------------------------+----------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -381,12 +354,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 39    ;
+; Total registers                              ; 125   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 5     ;
+; Number of registers using Clock Enable       ; 66    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -396,7 +369,7 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; video_out:out|pixel_count[0]           ; 13      ;
+; video_out:out|pixel_count[0]           ; 4       ;
 ; video_out:out|line_count[0]            ; 1       ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
@@ -407,7 +380,12 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 26:1               ; 8 bits    ; 136 LEs       ; 80 LEs               ; 56 LEs                 ; Yes        ; |datatape|video_out:out|video_out[4] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |datatape|video_in:in|sample_3[3]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |datatape|video_in:in|sample_2[0]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |datatape|video_in:in|sample_1[7]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |datatape|video_in:in|sample_0[7]    ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; Yes        ; |datatape|video_in:in|data_out[2]    ;
+; 26:1               ; 8 bits    ; 136 LEs       ; 80 LEs               ; 56 LEs                 ; Yes        ; |datatape|video_out:out|video_out[2] ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |datatape|video_out:out|pixel_count  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
@@ -875,16 +853,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "video_in:in"                                                                                                                                                                    ;
-+----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                                                                                                                                               ;
-+----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; sample_clk     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; data_out       ; Output ; Warning  ; Output or bidir port (5 bits) is smaller than the port expression (8 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
-; data_out[4..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; data_ready     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-+----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "video_in:in"                                                                                ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; sample_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_ready   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -912,24 +888,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 165                         ;
-; cycloneiii_ff         ; 39                          ;
-;     ENA               ; 5                           ;
-;     plain             ; 34                          ;
+; cycloneiii_ff         ; 125                         ;
+;     ENA               ; 66                          ;
+;     plain             ; 59                          ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 198                         ;
-;     arith             ; 29                          ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 15                          ;
-;     normal            ; 169                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 16                          ;
+; cycloneiii_lcell_comb ; 353                         ;
+;     arith             ; 61                          ;
+;         2 data inputs ; 21                          ;
 ;         3 data inputs ; 40                          ;
-;         4 data inputs ; 110                         ;
+;     normal            ; 292                         ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 50                          ;
+;         4 data inputs ; 217                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 20.30                       ;
-; Average LUT depth     ; 17.04                       ;
+; Max LUT depth         ; 19.50                       ;
+; Average LUT depth     ; 9.29                        ;
 +-----------------------+-----------------------------+
 
 
@@ -948,11 +924,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Jun 12 21:09:47 2020
+    Info: Processing started: Sat Jun 13 13:36:25 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off datatape -c datatape
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Warning (10261): Verilog HDL Event Control warning at datatape.v(221): Event Control contains a complex event expression File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 221
 Info (12021): Found 1 design units, including 1 entities, in source file datatape.v
     Info (12023): Found entity 1: datatape File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pll.v
@@ -1204,6 +1179,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file etherne
 Info (12021): Found 1 design units, including 1 entities, in source file ethernet/altera_std_synchronizer_nocut.v
     Info (12023): Found entity 1: altera_std_synchronizer_nocut File: C:/Users/Caden/Documents/GitHub/datatape/ethernet/altera_std_synchronizer_nocut.v Line: 44
 Info (12127): Elaborating entity "datatape" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at datatape.v(217): truncated value with size 32 to match size of target (8) File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 217
 Warning (10034): Output port "LEDG" at datatape.v(75) has no driver File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 75
 Warning (10034): Output port "LEDR" at datatape.v(76) has no driver File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 76
 Warning (10034): Output port "ENET0_TX_DATA" at datatape.v(100) has no driver File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 100
@@ -1284,27 +1260,22 @@ Info (12128): Elaborating entity "video_out" for hierarchy "video_out:out" File:
 Warning (10230): Verilog HDL assignment warning at video_out.v(56): truncated value with size 32 to match size of target (16) File: C:/Users/Caden/Documents/GitHub/datatape/video_out.v Line: 56
 Warning (10230): Verilog HDL assignment warning at video_out.v(321): truncated value with size 32 to match size of target (16) File: C:/Users/Caden/Documents/GitHub/datatape/video_out.v Line: 321
 Warning (12125): Using design file video_in.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: video_in File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 17
+    Info (12023): Found entity 1: video_in File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 20
 Info (12128): Elaborating entity "video_in" for hierarchy "video_in:in" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 175
-Warning (10230): Verilog HDL assignment warning at video_in.v(70): truncated value with size 8 to match size of target (1) File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 70
-Warning (10230): Verilog HDL assignment warning at video_in.v(73): truncated value with size 8 to match size of target (1) File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 73
-Warning (10230): Verilog HDL assignment warning at video_in.v(82): truncated value with size 32 to match size of target (1) File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 82
-Warning (10230): Verilog HDL assignment warning at video_in.v(103): truncated value with size 32 to match size of target (1) File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 103
-Warning (10030): Net "begin_data" at video_in.v(43) has no driver or initial value, using a default initial value '0' File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 43
-Warning (10034): Output port "data_out" at video_in.v(26) has no driver File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 26
+Warning (10036): Verilog HDL or VHDL warning at video_in.v(44): object "final_sample" assigned a value but never read File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 44
+Warning (10230): Verilog HDL assignment warning at video_in.v(68): truncated value with size 32 to match size of target (8) File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 68
+Warning (10230): Verilog HDL assignment warning at video_in.v(82): truncated value with size 32 to match size of target (8) File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 82
+Warning (10230): Verilog HDL assignment warning at video_in.v(164): truncated value with size 32 to match size of target (1) File: C:/Users/Caden/Documents/GitHub/datatape/video_in.v Line: 164
 Warning (12125): Using design file segment.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: segment File: C:/Users/Caden/Documents/GitHub/datatape/segment.v Line: 12
 Info (12128): Elaborating entity "segment" for hierarchy "segment:hex0" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 178
 Warning (12189): Intel FPGA IP Evaluation Mode (Simulation-Only) feature is turned on for all cores in the design
     Warning (12191): Some cores in this design do not support the Intel FPGA IP Evaluation Mode feature
         Warning (12192): "Triple-Speed Ethernet" does not support the Intel FPGA IP Evaluation Mode feature
-Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "ENET0_MDIO" has no driver File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 91
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_R[5]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 68
-    Warning (13410): Pin "VGA_G[5]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 69
-    Warning (13410): Pin "VGA_B[5]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 70
     Warning (13410): Pin "VGA_BLANK_N" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 72
     Warning (13410): Pin "LEDG[0]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 75
     Warning (13410): Pin "LEDG[1]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 75
@@ -1332,62 +1303,41 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 76
     Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 76
     Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 76
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
     Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
     Warning (13410): Pin "HEX0[2]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
     Warning (13410): Pin "HEX0[3]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
+    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
     Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 78
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
     Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
     Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
     Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 79
     Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
     Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
     Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 80
     Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
     Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
     Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
     Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
     Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 81
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 82
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 82
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 82
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 82
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 82
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 82
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 82
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
     Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
     Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
     Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
     Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
-    Warning (13410): Pin "HEX6[0]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 84
-    Warning (13410): Pin "HEX6[1]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 84
-    Warning (13410): Pin "HEX6[2]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 84
-    Warning (13410): Pin "HEX6[3]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 84
-    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 84
-    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 84
-    Warning (13410): Pin "HEX6[6]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 84
-    Warning (13410): Pin "HEX7[0]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 85
-    Warning (13410): Pin "HEX7[1]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 85
-    Warning (13410): Pin "HEX7[2]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 85
-    Warning (13410): Pin "HEX7[3]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 85
-    Warning (13410): Pin "HEX7[4]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 85
-    Warning (13410): Pin "HEX7[5]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 85
-    Warning (13410): Pin "HEX7[6]" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 85
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 83
     Warning (13410): Pin "ENET0_GTX_CLK" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 87
     Warning (13410): Pin "ENET0_MDC" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 90
     Warning (13410): Pin "ENET0_RST_N" is stuck at GND File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 92
@@ -1408,9 +1358,7 @@ Info (144001): Generated suppressed messages file C:/Users/Caden/Documents/GitHu
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (15899): PLL "pll:clocks|altpll:altpll_component|pll_altpll:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: C:/Users/Caden/Documents/GitHub/datatape/db/pll_altpll.v Line: 51
-Warning (21074): Design contains 45 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 58
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 58
+Warning (21074): Design contains 34 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 58
     Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 58
     Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 58
@@ -1431,17 +1379,8 @@ Warning (21074): Design contains 45 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 59
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 59
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 59
-    Warning (15610): No output dependent on input pin "TD_DATA[0]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 63
-    Warning (15610): No output dependent on input pin "TD_DATA[1]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 63
-    Warning (15610): No output dependent on input pin "TD_DATA[2]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 63
-    Warning (15610): No output dependent on input pin "TD_DATA[3]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 63
-    Warning (15610): No output dependent on input pin "TD_DATA[4]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 63
-    Warning (15610): No output dependent on input pin "TD_DATA[5]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 63
-    Warning (15610): No output dependent on input pin "TD_DATA[6]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 63
-    Warning (15610): No output dependent on input pin "TD_DATA[7]" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 63
     Warning (15610): No output dependent on input pin "TD_HS" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 64
     Warning (15610): No output dependent on input pin "TD_VS" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 65
-    Warning (15610): No output dependent on input pin "TD_CLK27" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 66
     Warning (15610): No output dependent on input pin "ENET0_INT_N" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 89
     Warning (15610): No output dependent on input pin "ENET0_LINK100" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 88
     Warning (15610): No output dependent on input pin "ENET0_RX_CLK" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 93
@@ -1454,17 +1393,17 @@ Warning (21074): Design contains 45 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ENET0_RX_DV" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 97
     Warning (15610): No output dependent on input pin "ENET0_RX_ER" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 98
     Warning (15610): No output dependent on input pin "ENET0_TX_CLK" File: C:/Users/Caden/Documents/GitHub/datatape/datatape.v Line: 99
-Info (21057): Implemented 380 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 543 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 46 input pins
     Info (21059): Implemented 118 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 214 logic cells
+    Info (21061): Implemented 377 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 178 warnings
-    Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Fri Jun 12 21:10:03 2020
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 141 warnings
+    Info: Peak virtual memory: 4877 megabytes
+    Info: Processing ended: Sat Jun 13 13:36:42 2020
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+
