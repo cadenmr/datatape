@@ -1,2 +1,5 @@
 
 db/datatape.quiproj.13008.rdr.flock
+*.bak
+*.db_info
+*.flock
