@@ -4,7 +4,7 @@
 This project aims to use a FPGA to store high-speed data on a S-VHS tape using an unmodified VCR.
 This project is also my introduction to FPGAs and signal processing. 
 
-### Features/Goals
+## Features/Goals
 - Works with any unmodified S-VHS VCR in good condition with composite in/out
     - S-VHS ET may work but your mileage may vary
     - *NOT* compatible with standard VHS
