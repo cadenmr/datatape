@@ -1,4 +1,9 @@
-module datatape(
+module datatape #(
+
+	parameter TARGET = "ALTERA"
+
+)
+(
 
 	// Input Clocks
 	input wire 			CLOCK_50,
@@ -34,31 +39,30 @@ module datatape(
 	input  wire        ENET0_RX_DV		// RX CTL
 );
 
-// Wires
+// Reset Button
 wire [0:0]	rst;
+assign rst = KEY[0];
+
 // PLL
 wire [0:0]	pll_rst;
 wire [0:0]	clk_ntsc;
 wire [0:0]	clk_90;
 wire [0:0]	clk_125;
 
-// Registers
 // Output Video
 reg [7:0]	output_video;
 reg [0:0]	data_out_ready;
 reg [7:0]	data_out;
 wire [0:0]	output_ready;
+
 // Input Video
 reg [0:0] vsync;
 reg [0:0] input_ready;
 reg [7:0] data_in;
 reg [0:0] input_sample_ready;
 
-// Assignments
-// I/O
-assign rst = SW[0];
-// DAC
-assign VGA_CLK = ntsc_clk; // System Pixel Clock
+// DAC Assignments
+assign VGA_CLK = clk_ntsc; // System Pixel Clock
 assign VGA_R = output_video; // Set DACs
 assign VGA_G = output_video;
 assign VGA_B = output_video;
@@ -80,7 +84,7 @@ pll_125 pll2(
 	CLOCK_50,
 	clk_125);
 
-video_out out(ntsc_clk, 
+video_out out(clk_ntsc, 
 				  data_out_ready,
 				  data_out,
 				  output_ready, 
@@ -94,7 +98,7 @@ video_in in(TD_CLK27,
 				input_ready);
 
 // Output Video
-always @(negedge ntsc_clk) begin
+always @(negedge clk_ntsc) begin
 
 end
 
