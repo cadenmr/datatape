@@ -1,154 +1,63 @@
 module datatape(
+
+	// Input Clocks
+	input wire 			CLOCK_50,
 	
-	// Buttons
-	SW,
-	KEY,
-	
-	// Clocks
-	CLOCK_50,
-	
-	// TV Decoder
-	TD_DATA, // [7:0]
-	TD_HS,
-	TD_VS,
-	TD_CLK27,
-	
-	// Composite Out
-	VGA_R, // [7:0]
-	VGA_G, // [7:0]
-	VGA_B, // [7:0]
-	VGA_CLK,
-	VGA_BLANK_N,
-	VGA_SYNC_N,
+	// User I/O
+	input wire [17:0] SW,
+	input wire [3:0] 	KEY,
 	
 	// LEDs
-	LEDG, // [7:0]
-	LEDR, // [17:0]
+	output wire [7:0]  LEDG,
+	output wire [17:0] LEDR,
+
+	// Video Input
+	input wire [7:0] 	TD_DATA,
+	input wire 			TD_HS,
+	input wire 			TD_VS,
+	input wire 			TD_CLK27,
 	
-	// 7 Segment Displays
-	HEX0, // [6:0]
-	HEX1, // [6:0]
-	HEX2, // [6:0]
-	HEX3, // [6:0]
-	HEX4, // [6:0]
-	HEX5, // [6:0]
-	HEX6, // [6:0]
-	HEX7, // [6:0]
+	// Video Output
+	output wire [7:0] 	VGA_R,
+	output wire [7:0] 	VGA_G,
+	output wire [7:0] 	VGA_B,
+	output wire 			VGA_CLK,
+	output wire 			VGA_BLANK_N,
+	output wire 			VGA_SYNC_N,
 	
 	// Ethernet
-	ENET0_GTX_CLK,
-	ENET0_INT_N,
-	ENET0_LINK100,
-	ENET0_MDC,
-	ENET0_MDIO,
-	ENET0_RST_N,
-	ENET0_RX_CLK,
-	ENET0_RX_COL,
-	ENET0_RX_CRS,
-	ENET0_RX_DATA, // [3:0]
-	ENET0_RX_DV,
-	ENET0_RX_ER,
-	ENET0_TX_CLK,
-	ENET0_TX_DATA, // [3:0]
-	ENET0_TX_EN,
-	ENET0_TX_ER
-	);
-	
-// I/O
-input wire [17:0] SW;
-input wire [3:0] KEY;
+	output wire        ENET0_GTX_CLK,	// TX Clock
+	output wire [3:0]  ENET0_TX_DATA,	// TX Data
+	output wire        ENET0_TX_EN,		// TX CTL
+	input  wire        ENET0_RX_CLK,		// RX Clock
+	input  wire [3:0]  ENET0_RX_DATA,	// RX Data
+	input  wire        ENET0_RX_DV		// RX CTL
+);
 
-input wire CLOCK_50;
-
-input wire [7:0] TD_DATA;
-input wire TD_HS;
-input wire TD_VS;
-input wire TD_CLK27;
-
-output wire [7:0] VGA_R;
-output wire [7:0] VGA_G;
-output wire [7:0] VGA_B;
-output wire VGA_CLK;
-output wire VGA_BLANK_N;
-output wire VGA_SYNC_N;
-
-output wire [7:0] LEDG;
-output wire [17:0] LEDR;
-
-output wire [6:0] HEX0;
-output wire [6:0] HEX1;
-output wire [6:0] HEX2;
-output wire [6:0] HEX3;
-output wire [6:0] HEX4;
-output wire [6:0] HEX5;
-output wire [6:0] HEX6;
-output wire [6:0] HEX7;
-
-output reg ENET0_GTX_CLK;
-input wire ENET0_LINK100;
-input wire	ENET0_INT_N;
-output reg ENET0_MDC;
-inout wire ENET0_MDIO;
-output reg ENET0_RST_N;
-input wire ENET0_RX_CLK;
-input wire ENET0_RX_COL;
-input wire ENET0_RX_CRS;
-input wire [3:0] ENET0_RX_DATA;
-input wire ENET0_RX_DV;
-input wire ENET0_RX_ER;
-input wire ENET0_TX_CLK;
-output reg [3:0] ENET0_TX_DATA;
-output reg ENET0_TX_EN;
-output reg ENET0_TX_ER;
-
-// PLL Wires
+// Wires
+wire [0:0]	rst;
+// PLL
 wire [0:0]	pll_rst;
-wire [0:0]	ntsc_clk;
+wire [0:0]	clk_ntsc;
 wire [0:0]	clk_90;
 wire [0:0]	clk_125;
 
-
-// Output Video Registers
+// Registers
+// Output Video
 reg [7:0]	output_video;
 reg [0:0]	data_out_ready;
 reg [7:0]	data_out;
 wire [0:0]	output_ready;
-
-// 7 segment registers
-reg [6:0] segment_0;
-reg [6:0] segment_1;
-reg [6:0] segment_2;
-reg [6:0] segment_3;
-reg [6:0] segment_4;
-reg [6:0] segment_5;
-reg [6:0] segment_6;
-reg [6:0] segment_7;
-reg [0:0] hex_enable;
-
-// Input Video Registers
+// Input Video
 reg [0:0] vsync;
 reg [0:0] input_ready;
 reg [7:0] data_in;
 reg [0:0] input_sample_ready;
 
-// Ethernet MAC Registers
-wire [0:0] ethernet0_rst;
-reg [7:0] ethernet0_reg_addr;
-reg [31:0] ethernet0_reg_data_out;
-wire [0:0] ethernet0_read;
-reg [31:0] ethernet0_reg_data_in;
-wire [0:0] ethernet0_write;
-wire [0:0] ethernet0_busy;
-wire [0:0] ethernet0_set_10;
-wire [0:0] ethernet0_set_1000;
-wire [0:0] ethernet0_mode;
-wire [0:0] ethernet0_ena_10;
-wire [0:0] ethernet0_rx_control;
-wire [0:0] ethernet0_tx_control;
-wire [31:0] ethernet0_rx_data;
-//wire [0:0] ethernet0_rx_
-
 // Assignments
+// I/O
+assign rst = SW[0];
+// DAC
 assign VGA_CLK = ntsc_clk; // System Pixel Clock
 assign VGA_R = output_video; // Set DACs
 assign VGA_G = output_video;
@@ -159,7 +68,7 @@ assign VGA_BLANK_N = 1; // Keep BLANK set high (off)
 pll_ntsc pll0(
 	pll_rst, 
 	CLOCK_50, 
-	ntsc_clk);
+	clk_ntsc);
 	
 pll_90 pll1(
 	pll_rst,
@@ -184,81 +93,14 @@ video_in in(TD_CLK27,
 				data_in,
 				input_ready);
 
-// 7 segment displays
-segment hex0(ntsc_clk, hex_enable, HEX0[6:0], segment_0);
-segment hex1(ntsc_clk, hex_enable, HEX1[6:0], segment_1);
-segment hex2(ntsc_clk, hex_enable, HEX2[6:0], segment_2);
-segment hex3(ntsc_clk, hex_enable, HEX3[6:0], segment_3);
-segment hex4(ntsc_clk, hex_enable, HEX4[6:0], segment_4);
-segment hex5(ntsc_clk, hex_enable, HEX5[6:0], segment_5);
-segment hex6(ntsc_clk, hex_enable, HEX6[6:0], segment_6);
-segment hex7(ntsc_clk, hex_enable, HEX7[6:0], segment_7);
-
-// Ethernet
-//ethernet eth0(ethernet0_clk,
-//						ethernet0_rst,
-//						ethernet0_reg_addr[7:0],
-//						ethernet0_reg_data_out[31:0],
-//						ethernet0_read,
-//						ethernet0_reg_data_in[31:0],
-//						ethernet0_write,
-//						ethernet0_busy,
-//						ethernet0_clk,
-//						ENET0_RX_CLK,
-//						ethernet0_set_10,
-//						ethernet0_set_1000,
-//						ethernet0_mode,
-//						ethernet0_ena_10,
-//						ENET0_RX_DATA[3:0],
-//						ENET0_TX_DATA[3:0],
-//						ethernet0_rx_control,
-//						ethernet0_tx_control,
-//						ENET0_RX_CLK,
-//						ethernet0_clk,
-//						ethernet0_
-//						
-
 // Output Video
 always @(negedge ntsc_clk) begin
 
-	// Create symbol from packet
-	
-	if (SW[1]) begin
-		data_out = data_out + 1;
-		
-		if (data_out >= 255)
-			data_out = 42;
-			
-	end
-	
-	if (SW[1]) begin
-		segment_6 = data_out[3:0];
-		segment_7 = data_out[7:4];
-	end
-	
 end
 
 // Input Video
 always @(posedge TD_CLK27) begin
 
-	// Create and send the packet
-	
-	if (SW[0]) begin
-		segment_4 = data_in[3:0];
-		segment_5 = data_in[7:4];
-	end
-
-end
-
-// 7 Segment Displays
-always @(negedge CLOCK_50) begin
-
-	hex_enable = 1;
-	segment_0 = 'h10;
-	segment_1 = 'h10;
-	segment_2 = 'h10;
-	segment_3 = 'h10;
-		
 end
 
 endmodule
