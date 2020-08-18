@@ -1,9 +1,4 @@
-module datatape #(
-
-	parameter TARGET = "ALTERA"
-
-)
-(
+module datatape(
 
 	// Input Clocks
 	input wire 			CLOCK_50,
