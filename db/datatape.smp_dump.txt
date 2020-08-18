@@ -1,5 +1,0 @@
-
-State Machine - |datatape|video_out:out|even_field
-Name even_field.0 
-even_field.1 0 
-even_field.0 1 
