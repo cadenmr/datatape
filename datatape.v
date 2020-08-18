@@ -56,6 +56,13 @@ reg [0:0] input_ready;
 reg [7:0] data_in;
 reg [0:0] input_sample_ready;
 
+// Ethernet
+wire [0:0]	rx_payload_ready;
+wire [7:0]	rx_payload_data;
+
+wire [0:0] tx_payload_ready;
+wire [7:0] tx_payload_data;
+
 // DAC Assignments
 assign VGA_CLK = clk_ntsc; // System Pixel Clock
 assign VGA_R = output_video; // Set DACs
@@ -91,6 +98,26 @@ video_in in(TD_CLK27,
 				TD_DATA, 
 				data_in,
 				input_ready);
+				
+ethernet eth0(
+	.rst(rst),
+	.clk(clk_125),
+	.clk90(clock_90),
+	
+	.rgmii_rx_clk(ENET0_RX_CLK),
+	.rgmii_rx_data(ENET0_RX_DATA),
+	.rgmii_rx_dv(ENET0_RX_DV),
+	
+	.rgmii_tx_clk(ENET0_GTX_CLK),
+	.rgmii_tx_data(ENET0_TX_DATA),
+	.rgmii_tx_en(ENET0_TX_EN),
+	
+	.rx_payload_data(rx_payload_data),
+	.rx_payload_ready(rx_payload_ready),
+	
+	.tx_payload_data(tx_payload_data),
+	.tx_payload_ready(tx_payload_ready)
+);
 
 // Output Video
 always @(negedge clk_ntsc) begin

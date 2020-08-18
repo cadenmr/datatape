@@ -3,12 +3,7 @@
 // https://github.com/alexforencich/verilog-ethernet
 
 
-module ethernet#(
-
-	parameter TARGET = "ALTERA"
-
-)
-(
+module ethernet(
 	input wire [0:0]	rst,
 	input wire [0:0]	clk,					// 125 MHz
 	input wire [0:0]	clk90,
@@ -29,6 +24,13 @@ module ethernet#(
 	input wire [7:0]	tx_payload_data,
 	input wire [0:0]	tx_payload_ready
 );
+
+// I/O
+assign rx_payload_data	= rx_fifo_udp_payload_axis_tdata;
+assign rx_payload_ready	= rx_fifo_udp_payload_axis_tready;
+
+assign tx_fifo_udp_payload_axis_tdata	= tx_payload_data;
+assign tx_fifo_udp_payload_axis_tready	= tx_payload_ready;
 
 // IP Configuration
 wire [47:0] local_mac   = 48'h02_00_00_00_00_00;
@@ -188,7 +190,7 @@ assign tx_ip_payload_axis_tlast = 0;
 assign tx_ip_payload_axis_tuser = 0;
 
 eth_mac_1g_rgmii_fifo #(
-    .TARGET(TARGET),
+    .TARGET("ALTERA"),
     .USE_CLK90("TRUE"),
     .ENABLE_PADDING(1),
     .MIN_FRAME_LENGTH(64),

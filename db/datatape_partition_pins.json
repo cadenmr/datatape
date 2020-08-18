@@ -66,6 +66,58 @@
 				{
 					"name" : "VGA_SYNC_N",
 					"strict" : false
+				},
+				{
+					"name" : "ENET0_GTX_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_TX_DATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_TX_DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_TX_DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_TX_DATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_TX_EN",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_RX_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_RX_DV",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_RX_DATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_RX_DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_RX_DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ENET0_RX_DATA[3]",
+					"strict" : false
 				}
 			]
 		}
