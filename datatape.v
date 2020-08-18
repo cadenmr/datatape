@@ -102,16 +102,17 @@ output reg ENET0_TX_EN;
 output reg ENET0_TX_ER;
 
 // PLL Wires
-wire pll_rst;
-wire output_px_clk;
-wire ethernet0_clk;
-wire pll_lck;
+wire [0:0]	pll_rst;
+wire [0:0]	ntsc_clk;
+wire [0:0]	clk_90;
+wire [0:0]	clk_125;
+
 
 // Output Video Registers
-reg [7:0] output_video;
-reg [0:0] data_out_ready;
-reg [7:0] data_out;
-wire [0:0] output_ready;
+reg [7:0]	output_video;
+reg [0:0]	data_out_ready;
+reg [7:0]	data_out;
+wire [0:0]	output_ready;
 
 // 7 segment registers
 reg [6:0] segment_0;
@@ -148,20 +149,29 @@ wire [31:0] ethernet0_rx_data;
 //wire [0:0] ethernet0_rx_
 
 // Assignments
-assign VGA_CLK = output_px_clk; // System Pixel Clock
+assign VGA_CLK = ntsc_clk; // System Pixel Clock
 assign VGA_R = output_video; // Set DACs
 assign VGA_G = output_video;
 assign VGA_B = output_video;
 assign VGA_BLANK_N = 1; // Keep BLANK set high (off)
 
 // Modules
-pll clocks(pll_rst, 
-			  CLOCK_50, 
-			  output_px_clk, 
-			  ethernet0_clk, 
-			  pll_lck);
+pll_ntsc pll0(
+	pll_rst, 
+	CLOCK_50, 
+	ntsc_clk);
+	
+pll_90 pll1(
+	pll_rst,
+	CLOCK_50,
+	clk_90);
 
-video_out out(output_px_clk, 
+pll_125 pll2(
+	pll_rst,
+	CLOCK_50,
+	clk_125);
+
+video_out out(ntsc_clk, 
 				  data_out_ready,
 				  data_out,
 				  output_ready, 
@@ -175,14 +185,14 @@ video_in in(TD_CLK27,
 				input_ready);
 
 // 7 segment displays
-segment hex0(output_px_clk, hex_enable, HEX0[6:0], segment_0);
-segment hex1(output_px_clk, hex_enable, HEX1[6:0], segment_1);
-segment hex2(output_px_clk, hex_enable, HEX2[6:0], segment_2);
-segment hex3(output_px_clk, hex_enable, HEX3[6:0], segment_3);
-segment hex4(output_px_clk, hex_enable, HEX4[6:0], segment_4);
-segment hex5(output_px_clk, hex_enable, HEX5[6:0], segment_5);
-segment hex6(output_px_clk, hex_enable, HEX6[6:0], segment_6);
-segment hex7(output_px_clk, hex_enable, HEX7[6:0], segment_7);
+segment hex0(ntsc_clk, hex_enable, HEX0[6:0], segment_0);
+segment hex1(ntsc_clk, hex_enable, HEX1[6:0], segment_1);
+segment hex2(ntsc_clk, hex_enable, HEX2[6:0], segment_2);
+segment hex3(ntsc_clk, hex_enable, HEX3[6:0], segment_3);
+segment hex4(ntsc_clk, hex_enable, HEX4[6:0], segment_4);
+segment hex5(ntsc_clk, hex_enable, HEX5[6:0], segment_5);
+segment hex6(ntsc_clk, hex_enable, HEX6[6:0], segment_6);
+segment hex7(ntsc_clk, hex_enable, HEX7[6:0], segment_7);
 
 // Ethernet
 //ethernet eth0(ethernet0_clk,
@@ -209,7 +219,7 @@ segment hex7(output_px_clk, hex_enable, HEX7[6:0], segment_7);
 //						
 
 // Output Video
-always @(negedge output_px_clk) begin
+always @(negedge ntsc_clk) begin
 
 	// Create symbol from packet
 	
