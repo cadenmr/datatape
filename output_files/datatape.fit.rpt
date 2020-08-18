@@ -1,5 +1,5 @@
 Fitter report for datatape
-Tue Aug 18 01:32:08 2020
+Tue Aug 18 01:40:24 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -75,7 +75,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Aug 18 01:32:08 2020       ;
+; Fitter Status                      ; Successful - Tue Aug 18 01:40:23 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; datatape                                    ;
 ; Top-level Entity Name              ; datatape                                    ;
@@ -4006,7 +4006,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
-Info (11888): Total time spent on timing analysis during the Fitter is 1.70 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.68 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -4028,10 +4028,10 @@ Warning (169177): 12 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2 File: /home/caden/github/datatape/datatape.v Line: 4
 Info (144001): Generated suppressed messages file /home/caden/github/datatape/output_files/datatape.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 438 warnings
-    Info: Peak virtual memory: 2213 megabytes
-    Info: Processing ended: Tue Aug 18 01:32:09 2020
+    Info: Peak virtual memory: 2206 megabytes
+    Info: Processing ended: Tue Aug 18 01:40:24 2020
     Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:01:03
+    Info: Total CPU time (on all processors): 00:01:04
 
 
 +----------------------------+
