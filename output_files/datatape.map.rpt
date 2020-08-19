@@ -1,5 +1,5 @@
 Analysis & Synthesis report for datatape
-Tue Aug 18 18:28:00 2020
+Tue Aug 18 20:34:09 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -151,7 +151,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Aug 18 18:28:00 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug 18 20:34:09 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; datatape                                    ;
 ; Top-level Entity Name              ; datatape                                    ;
@@ -274,7 +274,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 6            ;   0.1%      ;
 ;     Processor 7            ;   0.1%      ;
 ;     Processor 8            ;   0.1%      ;
-;     Processors 9-16        ;   0.0%      ;
+;     Processors 9-16        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -9058,14 +9058,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ethernet:eth0"                                                                                  ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                             ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; rx_payload_data  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rx_payload_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ethernet:eth0"                                                                                                                                   ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rx_data  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; rx_valid ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; rx_ready ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; rx_last  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; rx_user  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; tx_data  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; tx_ready ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; tx_last  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -9155,7 +9161,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Aug 18 18:27:47 2020
+    Info: Processing started: Tue Aug 18 20:33:54 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off datatape -c datatape
 Warning (125092): Tcl Script File pll.qip not found
     Info (125063): set_global_assignment -name QIP_FILE pll.qip
@@ -9175,6 +9181,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file pll_125
     Info (12023): Found entity 1: pll_125 File: /home/caden/github/datatape/pll_125.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file ethernet.v
     Info (12023): Found entity 1: ethernet File: /home/caden/github/datatape/ethernet.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file ethernet_parse.v
+    Info (12023): Found entity 1: ethernet_parse File: /home/caden/github/datatape/ethernet_parse.v Line: 3
 Warning (10236): Verilog HDL Implicit Net warning at datatape.v(105): created implicit net for "clock_90" File: /home/caden/github/datatape/datatape.v Line: 105
 Info (12127): Elaborating entity "datatape" for the top level hierarchy
 Warning (10034): Output port "LEDG" at datatape.v(11) has no driver File: /home/caden/github/datatape/datatape.v Line: 11
@@ -9377,10 +9385,10 @@ Warning (10036): Verilog HDL or VHDL warning at video_in.v(44): object "final_sa
 Warning (10230): Verilog HDL assignment warning at video_in.v(68): truncated value with size 32 to match size of target (8) File: /home/caden/github/datatape/video_in.v Line: 68
 Warning (10230): Verilog HDL assignment warning at video_in.v(82): truncated value with size 32 to match size of target (8) File: /home/caden/github/datatape/video_in.v Line: 82
 Warning (10230): Verilog HDL assignment warning at video_in.v(164): truncated value with size 32 to match size of target (1) File: /home/caden/github/datatape/video_in.v Line: 164
-Info (12128): Elaborating entity "ethernet" for hierarchy "ethernet:eth0" File: /home/caden/github/datatape/datatape.v Line: 120
+Info (12128): Elaborating entity "ethernet" for hierarchy "ethernet:eth0" File: /home/caden/github/datatape/datatape.v Line: 114
 Warning (12125): Using design file eth_mac_1g_rgmii_fifo.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: eth_mac_1g_rgmii_fifo File: /home/caden/github/datatape/eth_mac_1g_rgmii_fifo.v Line: 32
-Info (12128): Elaborating entity "eth_mac_1g_rgmii_fifo" for hierarchy "ethernet:eth0|eth_mac_1g_rgmii_fifo:eth_mac_inst" File: /home/caden/github/datatape/ethernet.v Line: 239
+Info (12128): Elaborating entity "eth_mac_1g_rgmii_fifo" for hierarchy "ethernet:eth0|eth_mac_1g_rgmii_fifo:eth_mac_inst" File: /home/caden/github/datatape/ethernet.v Line: 248
 Warning (10335): Unrecognized synthesis attribute "srl_style" at eth_mac_1g_rgmii.v(111) File: /home/caden/github/datatape/eth_mac_1g_rgmii.v Line: 111
 Warning (10335): Unrecognized synthesis attribute "srl_style" at eth_mac_1g_rgmii.v(118) File: /home/caden/github/datatape/eth_mac_1g_rgmii.v Line: 118
 Warning (10335): Unrecognized synthesis attribute "srl_style" at eth_mac_1g_rgmii.v(132) File: /home/caden/github/datatape/eth_mac_1g_rgmii.v Line: 132
@@ -9475,7 +9483,7 @@ Warning (12125): Using design file eth_axis_rx.v, which is not specified as a de
 Warning (10222): Verilog HDL Parameter Declaration warning at eth_axis_rx.v(78): Parameter Declaration in module "eth_axis_rx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/caden/github/datatape/eth_axis_rx.v Line: 78
 Warning (10222): Verilog HDL Parameter Declaration warning at eth_axis_rx.v(80): Parameter Declaration in module "eth_axis_rx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/caden/github/datatape/eth_axis_rx.v Line: 80
 Warning (10222): Verilog HDL Parameter Declaration warning at eth_axis_rx.v(82): Parameter Declaration in module "eth_axis_rx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/caden/github/datatape/eth_axis_rx.v Line: 82
-Info (12128): Elaborating entity "eth_axis_rx" for hierarchy "ethernet:eth0|eth_axis_rx:eth_axis_rx_inst" File: /home/caden/github/datatape/ethernet.v Line: 265
+Info (12128): Elaborating entity "eth_axis_rx" for hierarchy "ethernet:eth0|eth_axis_rx:eth_axis_rx_inst" File: /home/caden/github/datatape/ethernet.v Line: 274
 Warning (10036): Verilog HDL or VHDL warning at eth_axis_rx.v(131): object "shift_axis_tvalid" assigned a value but never read File: /home/caden/github/datatape/eth_axis_rx.v Line: 131
 Warning (10230): Verilog HDL assignment warning at eth_axis_rx.v(124): truncated value with size 64 to match size of target (8) File: /home/caden/github/datatape/eth_axis_rx.v Line: 124
 Warning (10230): Verilog HDL assignment warning at eth_axis_rx.v(125): truncated value with size 8 to match size of target (1) File: /home/caden/github/datatape/eth_axis_rx.v Line: 125
@@ -9485,12 +9493,12 @@ Warning (12125): Using design file eth_axis_tx.v, which is not specified as a de
 Warning (10222): Verilog HDL Parameter Declaration warning at eth_axis_tx.v(77): Parameter Declaration in module "eth_axis_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/caden/github/datatape/eth_axis_tx.v Line: 77
 Warning (10222): Verilog HDL Parameter Declaration warning at eth_axis_tx.v(79): Parameter Declaration in module "eth_axis_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/caden/github/datatape/eth_axis_tx.v Line: 79
 Warning (10222): Verilog HDL Parameter Declaration warning at eth_axis_tx.v(81): Parameter Declaration in module "eth_axis_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/caden/github/datatape/eth_axis_tx.v Line: 81
-Info (12128): Elaborating entity "eth_axis_tx" for hierarchy "ethernet:eth0|eth_axis_tx:eth_axis_tx_inst" File: /home/caden/github/datatape/ethernet.v Line: 290
+Info (12128): Elaborating entity "eth_axis_tx" for hierarchy "ethernet:eth0|eth_axis_tx:eth_axis_tx_inst" File: /home/caden/github/datatape/ethernet.v Line: 299
 Warning (10036): Verilog HDL or VHDL warning at eth_axis_tx.v(132): object "shift_eth_payload_axis_tvalid" assigned a value but never read File: /home/caden/github/datatape/eth_axis_tx.v Line: 132
 Warning (10230): Verilog HDL assignment warning at eth_axis_tx.v(228): truncated value with size 32 to match size of target (4) File: /home/caden/github/datatape/eth_axis_tx.v Line: 228
 Warning (12125): Using design file udp_complete.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: udp_complete File: /home/caden/github/datatape/udp_complete.v Line: 32
-Info (12128): Elaborating entity "udp_complete" for hierarchy "ethernet:eth0|udp_complete:udp_complete_inst" File: /home/caden/github/datatape/ethernet.v Line: 422
+Info (12128): Elaborating entity "udp_complete" for hierarchy "ethernet:eth0|udp_complete:udp_complete_inst" File: /home/caden/github/datatape/ethernet.v Line: 431
 Warning (10259): Verilog HDL error at udp_complete.v(36): constant value overflow File: /home/caden/github/datatape/udp_complete.v Line: 36
 Warning (12125): Using design file ip_arb_mux.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: ip_arb_mux File: /home/caden/github/datatape/ip_arb_mux.v Line: 32
@@ -9577,7 +9585,7 @@ Warning (12125): Using design file udp_ip_tx.v, which is not specified as a desi
     Info (12023): Found entity 1: udp_ip_tx File: /home/caden/github/datatape/udp_ip_tx.v Line: 32
 Info (12128): Elaborating entity "udp_ip_tx" for hierarchy "ethernet:eth0|udp_complete:udp_complete_inst|udp:udp_inst|udp_ip_tx:udp_ip_tx_inst" File: /home/caden/github/datatape/udp.v Line: 411
 Warning (10230): Verilog HDL assignment warning at udp_ip_tx.v(392): truncated value with size 32 to match size of target (16) File: /home/caden/github/datatape/udp_ip_tx.v Line: 392
-Info (12128): Elaborating entity "axis_fifo" for hierarchy "ethernet:eth0|axis_fifo:udp_payload_fifo" File: /home/caden/github/datatape/ethernet.v Line: 462
+Info (12128): Elaborating entity "axis_fifo" for hierarchy "ethernet:eth0|axis_fifo:udp_payload_fifo" File: /home/caden/github/datatape/ethernet.v Line: 471
 Warning (10230): Verilog HDL assignment warning at axis_fifo.v(220): truncated value with size 32 to match size of target (14) File: /home/caden/github/datatape/axis_fifo.v Line: 220
 Warning (10230): Verilog HDL assignment warning at axis_fifo.v(294): truncated value with size 32 to match size of target (14) File: /home/caden/github/datatape/axis_fifo.v Line: 294
 Warning (12011): Net is missing source, defaulting to GND
@@ -9696,7 +9704,7 @@ Info (12133): Instantiated megafunction "ethernet:eth0|udp_complete:udp_complete
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3sl1.tdf
     Info (12023): Found entity 1: altsyncram_3sl1 File: /home/caden/github/datatape/db/altsyncram_3sl1.tdf Line: 28
-Warning (12241): 13 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 14 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: /home/caden/github/datatape/rgmii_phy_if.v Line: 247
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -9780,9 +9788,9 @@ Info (21057): Implemented 3986 device resources after synthesis - the final reso
     Info (21064): Implemented 67 RAM segments
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 203 warnings
-    Info: Peak virtual memory: 572 megabytes
-    Info: Processing ended: Tue Aug 18 18:28:00 2020
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 562 megabytes
+    Info: Processing ended: Tue Aug 18 20:34:09 2020
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:27
 
 

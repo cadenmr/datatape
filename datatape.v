@@ -110,13 +110,7 @@ ethernet eth0(
 	
 	.rgmii_tx_clk(ENET0_GTX_CLK),
 	.rgmii_tx_data(ENET0_TX_DATA),
-	.rgmii_tx_en(ENET0_TX_EN),
-	
-	.rx_payload_data(rx_payload_data),
-	.rx_payload_ready(rx_payload_ready),
-	
-	.tx_payload_data(tx_payload_data),
-	.tx_payload_ready(tx_payload_ready)
+	.rgmii_tx_en(ENET0_TX_EN)
 );
 
 // Output Video
