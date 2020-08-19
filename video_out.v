@@ -156,8 +156,25 @@ always @(posedge clk) begin
 		if (pixel_count >= 59 && pixel_count <= 389) begin
 		
 			if (~fifor_empty) begin
-				video_out = fifor_data;
+				
+				case (fifor_data)
+				
+					default	: video_out = 56;
+					4'b0000	: video_out = 100;
+					4'b0001	: video_out = 110;
+					4'b0011	: video_out = 120;
+					4'b0111	: video_out	= 130;
+					4'b1111	: video_out	= 140;
+					4'b1110	: video_out = 150;
+					4'b1100	: video_out	= 160;
+					4'b1000	: video_out	= 170;
+					4'b1010	: video_out	= 180;
+					4'b0101	: video_out	= 190;
+				
+				endcase
+				
 				fifor_acknowledge = 1;
+				
 			end else begin
 				video_out = 56;
 				fifor_acknowledge = 0;
@@ -299,8 +316,25 @@ always @(posedge clk) begin
 		if (pixel_count >= 59 && pixel_count <= 389) begin
 		
 			if (~fifor_empty) begin
-				video_out = fifor_data;
+							
+				case (fifor_data)
+				
+					default	: video_out = 56;
+					4'b0000	: video_out = 100;
+					4'b0001	: video_out = 110;
+					4'b0011	: video_out = 120;
+					4'b0111	: video_out	= 130;
+					4'b1111	: video_out	= 140;
+					4'b1110	: video_out = 150;
+					4'b1100	: video_out	= 160;
+					4'b1000	: video_out	= 170;
+					4'b1010	: video_out	= 180;
+					4'b0101	: video_out	= 190;
+				
+				endcase
+				
 				fifor_acknowledge = 1;
+				
 			end else begin
 				video_out = 56;
 				fifor_acknowledge = 0;
