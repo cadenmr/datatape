@@ -17,21 +17,42 @@
 //  Video out to DAC (8-bit)
 //  SYNC out to DAC
 
+module video_out(
 
-module video_out(clkin,
-					  data_in_ready,
-					  data_in,
-					  ready,
-					  video_out,
-					  sync);
+	input wire [0:0]	rst,
+	input wire [0:0]	clk,	// NTSC System Clock (6.293761309 MHz)
 	
-// Ports
-input wire clkin;
-input wire data_in_ready;
-input wire [7:0] data_in;
-output reg [0:0] ready;
-output reg [7:0] video_out;
-output reg [0:0] sync;
+	// Output to DAC
+	output reg [7:0]	video_out;
+	output reg [0:0]	sync;
+	
+	// FIFO Data I/O
+	input wire [3:0]	fifow_data,
+	input wire [0:0]	fifow_clock,		// Data input clock (125 MHz from eth_mgr)
+	input wire [0:0]	fifow_acknowledge,
+	output wire [10:0] fifow_used_words
+);
+	
+// Input data buffer
+video_out_fifo video_output_buffer(
+
+	.q(fifor_data)						// Read data
+	.rdclk(clk),						// Read clock (6.293761309 MHz NTSC System Clock)
+	.rdreq(fifor_acknowledge),		// Read acknowledge
+	.rdempty(fifor_empty),			// FIFO Empty - Synchronized to read clock
+	.rdusedw(fifor_used_words),	// FIFO Used words count - Synchronized to read clock
+	
+	.data(fifow_data), 				// Write data
+	.wrclk(fifow_clk),				// Write clock (125 MHz from eth_mgr)
+	.wrreq(fifow_acknowledge),		// Write acknowledge
+	.wrusedw(fifow_used_words)		// FIFO Used words count - Synchronized to write clock
+);
+
+// FIFO Read Registers
+wire [3:0]	fifor_data;
+wire [0:0]	fifor_acknowledge;
+wire [0:0]	fifor_empty;
+wire [10:0]	fifor_used_words;
 
 // Video Registers
 reg [15:0] pixel_count;
@@ -39,16 +60,8 @@ reg [15:0] line_count;
 reg [0:0] even_field;
 reg [0:0] line_control_enabled;
 
-// Initial Settings
-initial begin
-	pixel_count = 1;
-	line_count = 1;
-	sync = 0;
-end
-
-
 // Video Output
-always @(posedge clkin) begin
+always @(posedge clk) begin
 
 	// Line terminator
 	if (pixel_count == 401) begin
