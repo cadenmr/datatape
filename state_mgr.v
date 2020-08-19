@@ -53,7 +53,15 @@ always @(posedge clk) begin
 end
 
 // State manager
+reg [3:0]	current_state;
 
+always @(posedge clk) begin
 
+	case(rx_packet_command)
+		default	: current_state = 4'h0;
+		4'h1		: current_state = 4'h1;
+	endcase
+
+end
 
 endmodule
