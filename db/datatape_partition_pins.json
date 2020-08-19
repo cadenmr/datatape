@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[2]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_R[3]",
 					"strict" : false
 				},
@@ -28,23 +24,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[6]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_R[7]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_G[0]",
 					"strict" : false
 				},
 				{
 					"name" : "VGA_G[1]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_G[2]",
 					"strict" : false
 				},
 				{
@@ -60,23 +44,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[6]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_G[7]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_B[0]",
 					"strict" : false
 				},
 				{
 					"name" : "VGA_B[1]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_B[2]",
 					"strict" : false
 				},
 				{
@@ -92,143 +64,59 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[6]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_B[7]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_SYNC_N",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[0]",
+					"name" : "ENET0_GTX_CLK",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[1]",
+					"name" : "ENET0_TX_DATA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[2]",
+					"name" : "ENET0_TX_DATA[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[3]",
+					"name" : "ENET0_TX_DATA[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[4]",
+					"name" : "ENET0_TX_DATA[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[5]",
+					"name" : "ENET0_TX_EN",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[6]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[0]",
+					"name" : "ENET0_RX_CLK",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[1]",
+					"name" : "ENET0_RX_DV",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[2]",
+					"name" : "ENET0_RX_DATA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[3]",
+					"name" : "ENET0_RX_DATA[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[4]",
+					"name" : "ENET0_RX_DATA[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[5]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX6[6]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX7[0]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX7[1]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX7[2]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX7[3]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX7[4]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX7[5]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX7[6]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[1]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_CLK27",
-					"strict" : false
-				},
-				{
-					"name" : "SW[0]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_DATA[0]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_DATA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_DATA[2]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_DATA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_DATA[7]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_DATA[6]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_DATA[5]",
-					"strict" : false
-				},
-				{
-					"name" : "TD_DATA[4]",
+					"name" : "ENET0_RX_DATA[3]",
 					"strict" : false
 				}
 			]

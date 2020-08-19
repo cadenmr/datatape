@@ -1,6 +1,6 @@
 Flow report for datatape
-Sat Jun 13 13:37:03 2020
-Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Tue Aug 18 18:28:32 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2019  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Jun 13 13:37:00 2020       ;
-; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Flow Status                        ; Successful - Tue Aug 18 18:28:29 2020       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; datatape                                    ;
 ; Top-level Entity Name              ; datatape                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 357 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 351 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 125 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 125                                         ;
-; Total pins                         ; 165 / 529 ( 31 % )                          ;
+; Total logic elements               ; 3,458 / 114,480 ( 3 % )                     ;
+;     Total combinational functions  ; 2,690 / 114,480 ( 2 % )                     ;
+;     Dedicated logic registers      ; 2,195 / 114,480 ( 2 % )                     ;
+; Total registers                    ; 2207                                        ;
+; Total pins                         ; 99 / 529 ( 19 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Total memory bits                  ; 102,400 / 3,981,312 ( 3 % )                 ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
+; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,257 +65,30 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/13/2020 13:36:26 ;
+; Start date & time ; 08/18/2020 18:27:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; datatape            ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                 ;
-+-------------------------------------+---------------------------------------------------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                                                           ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+---------------------------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589212.159208058514552                                                  ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                                              ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                                               ; --            ; --          ; --         ;
-; MISC_FILE                           ; pll_bb.v                                                                        ; --            ; --          ; --         ;
-; MISC_FILE                           ; pll.ppf                                                                         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet.cmp                                                                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/ethernet.v                                                         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_eth_tse_mac.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_eth_tse_mac.v                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_clk_cntl.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_clk_cntl.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_crc328checker.v               ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_crc328checker.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_crc328generator.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_crc328generator.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_crc32ctl8.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_crc32ctl8.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_crc32galois8.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_crc32galois8.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_gmii_io.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_gmii_io.v                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_lb_read_cntl.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_lb_read_cntl.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_lb_wrt_cntl.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_lb_wrt_cntl.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_hashing.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_hashing.v                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_host_control.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_host_control.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_host_control_small.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_host_control_small.v           ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_mac_control.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_mac_control.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_register_map.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_register_map.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_register_map_small.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_register_map_small.v           ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rx_counter_cntl.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rx_counter_cntl.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_shared_mac_control.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_shared_mac_control.v           ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_shared_register_map.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_shared_register_map.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_counter_cntl.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_counter_cntl.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_lfsr_10.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_lfsr_10.v                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_loopback_ff.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_loopback_ff.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_altshifttaps.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_altshifttaps.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_fifoless_mac_rx.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_fifoless_mac_rx.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_mac_rx.v                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_mac_rx.v                       ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_fifoless_mac_tx.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_fifoless_mac_tx.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_mac_tx.v                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_mac_tx.v                       ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_magic_detection.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_magic_detection.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_mdio.v                        ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_mdio.v                         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_mdio_clk_gen.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_mdio_clk_gen.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_mdio_cntl.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_mdio_cntl.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_top_mdio.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_top_mdio.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_mii_rx_if.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_mii_rx_if.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_mii_tx_if.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_mii_tx_if.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_pipeline_base.v               ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_pipeline_base.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_pipeline_stage.sv             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_pipeline_stage.sv              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_dpram_16x32.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_dpram_16x32.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_dpram_8x32.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_dpram_8x32.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_dpram_ecc_16x32.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_dpram_ecc_16x32.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_fifoless_retransmit_cntl.v    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_fifoless_retransmit_cntl.v     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_retransmit_cntl.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_retransmit_cntl.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rgmii_in1.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rgmii_in1.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rgmii_in4.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rgmii_in4.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_nf_rgmii_module.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_nf_rgmii_module.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rgmii_module.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rgmii_module.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rgmii_out1.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rgmii_out1.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rgmii_out4.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rgmii_out4.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rx_ff.v                       ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rx_ff.v                        ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rx_min_ff.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rx_min_ff.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rx_ff_cntrl.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rx_ff_cntrl.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rx_ff_cntrl_32.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rx_ff_cntrl_32.v               ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rx_ff_cntrl_32_shift16.v      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rx_ff_cntrl_32_shift16.v       ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rx_ff_length.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rx_ff_length.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_rx_stat_extract.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_rx_stat_extract.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_timing_adapter32.v            ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_timing_adapter32.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_timing_adapter8.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_timing_adapter8.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_timing_adapter_fifo32.v       ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_timing_adapter_fifo32.v        ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_timing_adapter_fifo8.v        ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_timing_adapter_fifo8.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_top_1geth.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_top_1geth.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_top_fifoless_1geth.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_top_fifoless_1geth.v           ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_top_w_fifo.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_top_w_fifo.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_top_w_fifo_10_100_1000.v      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_top_w_fifo_10_100_1000.v       ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_top_wo_fifo.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_top_wo_fifo.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_top_wo_fifo_10_100_1000.v     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_top_wo_fifo_10_100_1000.v      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_top_gen_host.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_top_gen_host.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_ff.v                       ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_ff.v                        ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_min_ff.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_min_ff.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_ff_cntrl.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_ff_cntrl.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_ff_cntrl_32.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_ff_cntrl_32.v               ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_ff_cntrl_32_shift16.v      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_ff_cntrl_32_shift16.v       ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_ff_length.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_ff_length.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_ff_read_cntl.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_ff_read_cntl.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_tx_stat_extract.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_tx_stat_extract.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_eth_tse_std_synchronizer.v        ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_eth_tse_std_synchronizer.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_eth_tse_std_synchronizer_bundle.v ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_eth_tse_std_synchronizer_bundle.v  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_eth_tse_ptp_std_synchronizer.v    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_eth_tse_ptp_std_synchronizer.v     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_false_path_marker.v           ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_false_path_marker.v            ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_reset_synchronizer.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_reset_synchronizer.v           ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_clock_crosser.v               ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_clock_crosser.v                ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_a_fifo_13.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_a_fifo_13.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_a_fifo_24.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_a_fifo_24.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_a_fifo_34.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_a_fifo_34.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_a_fifo_opt_1246.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_a_fifo_opt_1246.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_a_fifo_opt_14_44.v            ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_a_fifo_opt_14_44.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_a_fifo_opt_36_10.v            ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_a_fifo_opt_36_10.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_gray_cnt.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_gray_cnt.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_sdpm_altsyncram.v             ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_sdpm_altsyncram.v              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_altsyncram_dpm_fifo.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_altsyncram_dpm_fifo.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_bin_cnt.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_bin_cnt.v                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ph_calculator.sv              ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ph_calculator.sv               ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_sdpm_gen.v                    ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_sdpm_gen.v                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_dec_x10.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_dec_x10.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x10.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x10.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x10_wrapper.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x10_wrapper.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_dec_x14.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_dec_x14.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x14.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x14.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x14_wrapper.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x14_wrapper.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_dec_x2.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_dec_x2.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x2.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x2.v                   ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x2_wrapper.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x2_wrapper.v           ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_dec_x23.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_dec_x23.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x23.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x23.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x23_wrapper.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x23_wrapper.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_dec_x36.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_dec_x36.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x36.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x36.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x36_wrapper.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x36_wrapper.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_dec_x40.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_dec_x40.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x40.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x40.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x40_wrapper.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x40_wrapper.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_dec_x30.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_dec_x30.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x30.v                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x30.v                  ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_enc_x30_wrapper.v         ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_enc_x30_wrapper.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/mentor/altera_tse_ecc_status_crosser.v          ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/aldec/altera_tse_ecc_status_crosser.v           ; --            ; --          ; --         ;
-; MISC_FILE                           ; ethernet_sim/altera_eth_tse_mac/altera_std_synchronizer_nocut.v                 ; --            ; --          ; --         ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                                            ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                          ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                          ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                                          ; --            ; --          ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                    ; --            ; --          ; --         ;
-; SPD_FILE                            ; ethernet.spd                                                                    ; --            ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                                              ; --            ; --          ; --         ;
-+-------------------------------------+---------------------------------------------------------------------------------+---------------+-------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 167435662655703.159780046741116        ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; MISC_FILE                           ; pll_90_bb.v                            ; --            ; --          ; --         ;
+; MISC_FILE                           ; pll_90.ppf                             ; --            ; --          ; --         ;
+; MISC_FILE                           ; pll_125_bb.v                           ; --            ; --          ; --         ;
+; MISC_FILE                           ; pll_125.ppf                            ; --            ; --          ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -323,11 +96,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4877 MB             ; 00:00:26                           ;
-; Fitter               ; 00:00:15     ; 1.0                     ; 6729 MB             ; 00:00:28                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4700 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 5013 MB             ; 00:00:02                           ;
-; Total                ; 00:00:35     ; --                      ; --                  ; 00:00:59                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 572 MB              ; 00:00:25                           ;
+; Fitter               ; 00:00:25     ; 1.2                     ; 2213 MB             ; 00:01:03                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 369 MB              ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.6                     ; 723 MB              ; 00:00:03                           ;
+; Total                ; 00:00:42     ; --                      ; --                  ; 00:01:33                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -336,10 +109,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-0TCNIM6  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-0TCNIM6  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-0TCNIM6  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-0TCNIM6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; deskguin         ; Arch Linux ; Arch Linux ; x86_64         ;
+; Fitter               ; deskguin         ; Arch Linux ; Arch Linux ; x86_64         ;
+; Assembler            ; deskguin         ; Arch Linux ; Arch Linux ; x86_64         ;
+; Timing Analyzer      ; deskguin         ; Arch Linux ; Arch Linux ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
