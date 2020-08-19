@@ -56,7 +56,7 @@ reg [0:0] input_ready;
 reg [7:0] data_in;
 reg [0:0] input_sample_ready;
 
-// Transfer between Ethernet and eth_mgr
+// Transfer between Ethernet and state_mgr
 wire [7:0]	rx_data;
 wire [0:0]	rx_valid;
 wire [0:0]	rx_ready;
@@ -66,6 +66,12 @@ wire [0:0]	rx_user;
 wire [7:0]	tx_data;
 wire [0:0]	tx_ready;
 wire [0:0]	tx_last;
+
+// Transfer between video_out and state_mgr
+wire [3:0]	video_out_fifow_data;
+wire [0:0]	video_out_fifow_clk;
+wire [0:0]	video_out_fifow_request;
+wire [10:0]	video_out_fifow_used_words;
 
 // DAC Assignments
 assign VGA_CLK = clk_ntsc; // System Pixel Clock
@@ -96,8 +102,12 @@ video_out out(
 	.clk(clk_ntsc),
 	
 	.video_out(output_video),
-	.sync(VGA_SYNC_N)
-
+	.sync(VGA_SYNC_N),
+	
+	.fifow_data(video_out_fifow_data),
+	.fifow_clock(video_out_fifow_clk),
+	.fifow_request(video_out_fifow_request),
+	.fifow_used_words(video_out_fifow_used_words)
 );
 
 video_in in(TD_CLK27, 
@@ -130,7 +140,7 @@ ethernet eth0(
 	.tx_last(tx_last)
 );
 
-ethernet_parse eth_mgr(
+state_mgr director(
 	.rst(rst),
 	.clk(clk_125),
 	
@@ -142,17 +152,12 @@ ethernet_parse eth_mgr(
 	
 	.tx_data(tx_data),
 	.tx_ready(tx_ready),
-	.tx_last(tx_last)
+	.tx_last(tx_last),
+	
+	.vout_fifow_data(video_out_fifow_data),
+	.vout_fifow_clock(video_out_fifow_clk),
+	.vout_fifow_request(video_out_fifow_request),
+	.vout_fifow_used_words(video_out_fifow_used_words)
 );
-
-// Output Video
-always @(negedge clk_ntsc) begin
-
-end
-
-// Input Video
-always @(posedge TD_CLK27) begin
-
-end
 
 endmodule
