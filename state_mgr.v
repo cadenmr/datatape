@@ -22,7 +22,6 @@ module state_mgr(
 	
 	// Communication with video_out
 	output reg	[3:0]	vout_fifow_data,
-	output wire [0:0]	vout_fifow_clock,
 	output reg	[0:0]	vout_fifow_request,
 	input wire [10:0]	vout_fifow_used_words
 	

@@ -1,5 +1,5 @@
 Fitter report for datatape
-Wed Aug 19 20:40:02 2020
+Wed Aug 19 21:37:34 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -75,7 +75,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Aug 19 20:40:02 2020       ;
+; Fitter Status                      ; Successful - Wed Aug 19 21:37:34 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; datatape                                    ;
 ; Top-level Entity Name              ; datatape                                    ;
@@ -162,7 +162,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.22        ;
+; Average used               ; 1.23        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -173,7 +173,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 5            ;   1.7%      ;
 ;     Processor 6            ;   1.7%      ;
 ;     Processor 7            ;   1.6%      ;
-;     Processor 8            ;   1.5%      ;
+;     Processor 8            ;   1.6%      ;
 ;     Processors 9-16        ;   1.3%      ;
 +----------------------------+-------------+
 
@@ -3523,7 +3523,7 @@ Warning (176127): The parameters of the PLL pll_125:pll2|altpll:altpll_component
     Info (176120): The values of the parameter "Max Lock Period" do not match for the PLL atoms pll_ntsc:pll0|altpll:altpll_component|pll_ntsc_altpll:auto_generated|pll1 and PLL pll_125:pll2|altpll:altpll_component|pll_125_altpll:auto_generated|pll1
         Info (176121): The value of the parameter "Max Lock Period" for the PLL atom pll_ntsc:pll0|altpll:altpll_component|pll_ntsc_altpll:auto_generated|pll1 is 20000
         Info (176121): The value of the parameter "Max Lock Period" for the PLL atom pll_125:pll2|altpll:altpll_component|pll_125_altpll:auto_generated|pll1 is 33330
-Critical Warning (176598): PLL "pll_125:pll2|altpll:altpll_component|pll_125_altpll:auto_generated|pll1" input clock inclk[0] is not fully compensated because it is fed by a remote clock pin "Pin_Y2" File: /home/caden/github/datatape/datatape.v Line: 101
+Critical Warning (176598): PLL "pll_125:pll2|altpll:altpll_component|pll_125_altpll:auto_generated|pll1" input clock inclk[0] is not fully compensated because it is fed by a remote clock pin "Pin_Y2" File: /home/caden/github/datatape/datatape.v Line: 103
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity dcfifo_4cg1
         Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_b09:dffpipe16|dffe17a* 
@@ -4019,12 +4019,12 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
-Info (11888): Total time spent on timing analysis during the Fitter is 1.75 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.71 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 12 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin TD_DATA[0] uses I/O standard 3.3-V LVTTL at E8 File: /home/caden/github/datatape/datatape.v Line: 15
@@ -4041,10 +4041,10 @@ Warning (169177): 12 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2 File: /home/caden/github/datatape/datatape.v Line: 4
 Info (144001): Generated suppressed messages file /home/caden/github/datatape/output_files/datatape.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 446 warnings
-    Info: Peak virtual memory: 2211 megabytes
-    Info: Processing ended: Wed Aug 19 20:40:03 2020
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:01:07
+    Info: Peak virtual memory: 2210 megabytes
+    Info: Processing ended: Wed Aug 19 21:37:34 2020
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:01:08
 
 
 +----------------------------+

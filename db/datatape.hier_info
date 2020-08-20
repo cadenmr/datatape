@@ -22400,7 +22400,7 @@ status_good_frame <= good_frame_reg.DB_MAX_OUTPUT_PORT_TYPE
 
 |datatape|state_mgr:director
 rst[0] => ~NO_FANOUT~
-clk[0] => vout_fifow_clock[0].DATAIN
+clk[0] => ~NO_FANOUT~
 rx_data[0] => ~NO_FANOUT~
 rx_data[1] => ~NO_FANOUT~
 rx_data[2] => ~NO_FANOUT~
@@ -22427,7 +22427,6 @@ vout_fifow_data[0] <= <GND>
 vout_fifow_data[1] <= <GND>
 vout_fifow_data[2] <= <GND>
 vout_fifow_data[3] <= <GND>
-vout_fifow_clock[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
 vout_fifow_request[0] <= <GND>
 vout_fifow_used_words[0] => ~NO_FANOUT~
 vout_fifow_used_words[1] => ~NO_FANOUT~

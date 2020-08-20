@@ -1,5 +1,5 @@
 Analysis & Synthesis report for datatape
-Wed Aug 19 20:39:36 2020
+Wed Aug 19 21:37:08 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -167,7 +167,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 19 20:39:35 2020       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 19 21:37:08 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; datatape                                    ;
 ; Top-level Entity Name              ; datatape                                    ;
@@ -290,7 +290,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 6            ;   0.1%      ;
 ;     Processor 7            ;   0.1%      ;
 ;     Processor 8            ;   0.1%      ;
-;     Processors 9-16        ;   0.0%      ;
+;     Processors 9-16        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -8828,7 +8828,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port                  ; Type   ; Severity ; Details                                                                                                                                                         ;
 +-----------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; vout_fifow_clock      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                             ;
 ; vout_fifow_request    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                             ;
 ; vout_fifow_used_words ; Input  ; Warning  ; Input port expression (9 bits) is smaller than the input port (11 bits) it drives.  Extra input bit(s) "vout_fifow_used_words[10..9]" will be connected to GND. ;
 +-----------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -9443,7 +9442,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Aug 19 20:39:20 2020
+    Info: Processing started: Wed Aug 19 21:36:53 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off datatape -c datatape
 Warning (125092): Tcl Script File pll.qip not found
     Info (125063): set_global_assignment -name QIP_FILE pll.qip
@@ -9466,16 +9465,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file etherne
 Warning (12019): Can't analyze file -- file ethernet_parse.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file video_out_fifo.v
     Info (12023): Found entity 1: video_out_fifo File: /home/caden/github/datatape/video_out_fifo.v Line: 40
-Warning (10236): Verilog HDL Implicit Net warning at datatape.v(113): created implicit net for "video_out_fifow_write_request" File: /home/caden/github/datatape/datatape.v Line: 113
-Warning (10236): Verilog HDL Implicit Net warning at datatape.v(126): created implicit net for "video_our_fifor_ack" File: /home/caden/github/datatape/datatape.v Line: 126
-Warning (10236): Verilog HDL Implicit Net warning at datatape.v(140): created implicit net for "clock_90" File: /home/caden/github/datatape/datatape.v Line: 140
-Warning (10236): Verilog HDL Implicit Net warning at datatape.v(176): created implicit net for "video_out_fifow_clk" File: /home/caden/github/datatape/datatape.v Line: 176
+Warning (10236): Verilog HDL Implicit Net warning at datatape.v(128): created implicit net for "video_our_fifor_ack" File: /home/caden/github/datatape/datatape.v Line: 128
+Warning (10236): Verilog HDL Implicit Net warning at datatape.v(142): created implicit net for "clock_90" File: /home/caden/github/datatape/datatape.v Line: 142
 Info (12127): Elaborating entity "datatape" for the top level hierarchy
 Warning (10034): Output port "LEDG" at datatape.v(11) has no driver File: /home/caden/github/datatape/datatape.v Line: 11
 Warning (10034): Output port "LEDR" at datatape.v(12) has no driver File: /home/caden/github/datatape/datatape.v Line: 12
 Warning (12125): Using design file pll_ntsc.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: pll_ntsc File: /home/caden/github/datatape/pll_ntsc.v Line: 40
-Info (12128): Elaborating entity "pll_ntsc" for hierarchy "pll_ntsc:pll0" File: /home/caden/github/datatape/datatape.v Line: 91
+Info (12128): Elaborating entity "pll_ntsc" for hierarchy "pll_ntsc:pll0" File: /home/caden/github/datatape/datatape.v Line: 93
 Info (12128): Elaborating entity "altpll" for hierarchy "pll_ntsc:pll0|altpll:altpll_component" File: /home/caden/github/datatape/pll_ntsc.v Line: 100
 Info (12130): Elaborated megafunction instantiation "pll_ntsc:pll0|altpll:altpll_component" File: /home/caden/github/datatape/pll_ntsc.v Line: 100
 Info (12133): Instantiated megafunction "pll_ntsc:pll0|altpll:altpll_component" with the following parameter: File: /home/caden/github/datatape/pll_ntsc.v Line: 100
@@ -9536,7 +9533,7 @@ Info (12133): Instantiated megafunction "pll_ntsc:pll0|altpll:altpll_component" 
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_ntsc_altpll.v
     Info (12023): Found entity 1: pll_ntsc_altpll File: /home/caden/github/datatape/db/pll_ntsc_altpll.v Line: 30
 Info (12128): Elaborating entity "pll_ntsc_altpll" for hierarchy "pll_ntsc:pll0|altpll:altpll_component|pll_ntsc_altpll:auto_generated" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "pll_90" for hierarchy "pll_90:pll1" File: /home/caden/github/datatape/datatape.v Line: 96
+Info (12128): Elaborating entity "pll_90" for hierarchy "pll_90:pll1" File: /home/caden/github/datatape/datatape.v Line: 98
 Info (12128): Elaborating entity "altpll" for hierarchy "pll_90:pll1|altpll:altpll_component" File: /home/caden/github/datatape/pll_90.v Line: 100
 Info (12130): Elaborated megafunction instantiation "pll_90:pll1|altpll:altpll_component" File: /home/caden/github/datatape/pll_90.v Line: 100
 Info (12133): Instantiated megafunction "pll_90:pll1|altpll:altpll_component" with the following parameter: File: /home/caden/github/datatape/pll_90.v Line: 100
@@ -9597,7 +9594,7 @@ Info (12133): Instantiated megafunction "pll_90:pll1|altpll:altpll_component" wi
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_90_altpll.v
     Info (12023): Found entity 1: pll_90_altpll File: /home/caden/github/datatape/db/pll_90_altpll.v Line: 30
 Info (12128): Elaborating entity "pll_90_altpll" for hierarchy "pll_90:pll1|altpll:altpll_component|pll_90_altpll:auto_generated" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "pll_125" for hierarchy "pll_125:pll2" File: /home/caden/github/datatape/datatape.v Line: 101
+Info (12128): Elaborating entity "pll_125" for hierarchy "pll_125:pll2" File: /home/caden/github/datatape/datatape.v Line: 103
 Info (12128): Elaborating entity "altpll" for hierarchy "pll_125:pll2|altpll:altpll_component" File: /home/caden/github/datatape/pll_125.v Line: 104
 Info (12130): Elaborated megafunction instantiation "pll_125:pll2|altpll:altpll_component" File: /home/caden/github/datatape/pll_125.v Line: 104
 Info (12133): Instantiated megafunction "pll_125:pll2|altpll:altpll_component" with the following parameter: File: /home/caden/github/datatape/pll_125.v Line: 104
@@ -9659,7 +9656,7 @@ Info (12133): Instantiated megafunction "pll_125:pll2|altpll:altpll_component" w
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_125_altpll.v
     Info (12023): Found entity 1: pll_125_altpll File: /home/caden/github/datatape/db/pll_125_altpll.v Line: 31
 Info (12128): Elaborating entity "pll_125_altpll" for hierarchy "pll_125:pll2|altpll:altpll_component|pll_125_altpll:auto_generated" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "video_out_fifo" for hierarchy "video_out_fifo:video_output_buffer" File: /home/caden/github/datatape/datatape.v Line: 115
+Info (12128): Elaborating entity "video_out_fifo" for hierarchy "video_out_fifo:video_output_buffer" File: /home/caden/github/datatape/datatape.v Line: 117
 Info (12128): Elaborating entity "dcfifo" for hierarchy "video_out_fifo:video_output_buffer|dcfifo:dcfifo_component" File: /home/caden/github/datatape/video_out_fifo.v Line: 84
 Info (12130): Elaborated megafunction instantiation "video_out_fifo:video_output_buffer|dcfifo:dcfifo_component" File: /home/caden/github/datatape/video_out_fifo.v Line: 84
 Info (12133): Instantiated megafunction "video_out_fifo:video_output_buffer|dcfifo:dcfifo_component" with the following parameter: File: /home/caden/github/datatape/video_out_fifo.v Line: 84
@@ -9709,17 +9706,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
 Info (12128): Elaborating entity "cmpr_n76" for hierarchy "video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|cmpr_n76:rdempty_eq_comp" File: /home/caden/github/datatape/db/dcfifo_4cg1.tdf Line: 79
 Warning (12125): Using design file video_out.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: video_out File: /home/caden/github/datatape/video_out.v Line: 10
-Info (12128): Elaborating entity "video_out" for hierarchy "video_out:out" File: /home/caden/github/datatape/datatape.v Line: 129
+Info (12128): Elaborating entity "video_out" for hierarchy "video_out:out" File: /home/caden/github/datatape/datatape.v Line: 131
 Warning (10230): Verilog HDL assignment warning at video_out.v(38): truncated value with size 32 to match size of target (16) File: /home/caden/github/datatape/video_out.v Line: 38
 Warning (10230): Verilog HDL assignment warning at video_out.v(332): truncated value with size 32 to match size of target (16) File: /home/caden/github/datatape/video_out.v Line: 332
 Warning (12125): Using design file video_in.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: video_in File: /home/caden/github/datatape/video_in.v Line: 20
-Info (12128): Elaborating entity "video_in" for hierarchy "video_in:in" File: /home/caden/github/datatape/datatape.v Line: 135
+Info (12128): Elaborating entity "video_in" for hierarchy "video_in:in" File: /home/caden/github/datatape/datatape.v Line: 137
 Warning (10036): Verilog HDL or VHDL warning at video_in.v(44): object "final_sample" assigned a value but never read File: /home/caden/github/datatape/video_in.v Line: 44
 Warning (10230): Verilog HDL assignment warning at video_in.v(68): truncated value with size 32 to match size of target (8) File: /home/caden/github/datatape/video_in.v Line: 68
 Warning (10230): Verilog HDL assignment warning at video_in.v(82): truncated value with size 32 to match size of target (8) File: /home/caden/github/datatape/video_in.v Line: 82
 Warning (10230): Verilog HDL assignment warning at video_in.v(164): truncated value with size 32 to match size of target (1) File: /home/caden/github/datatape/video_in.v Line: 164
-Info (12128): Elaborating entity "ethernet" for hierarchy "ethernet:eth0" File: /home/caden/github/datatape/datatape.v Line: 159
+Info (12128): Elaborating entity "ethernet" for hierarchy "ethernet:eth0" File: /home/caden/github/datatape/datatape.v Line: 161
 Warning (12125): Using design file eth_mac_1g_rgmii_fifo.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: eth_mac_1g_rgmii_fifo File: /home/caden/github/datatape/eth_mac_1g_rgmii_fifo.v Line: 32
 Info (12128): Elaborating entity "eth_mac_1g_rgmii_fifo" for hierarchy "ethernet:eth0|eth_mac_1g_rgmii_fifo:eth_mac_inst" File: /home/caden/github/datatape/ethernet.v Line: 248
@@ -9924,14 +9921,17 @@ Warning (10230): Verilog HDL assignment warning at axis_fifo.v(220): truncated v
 Warning (10230): Verilog HDL assignment warning at axis_fifo.v(294): truncated value with size 32 to match size of target (14) File: /home/caden/github/datatape/axis_fifo.v Line: 294
 Warning (12125): Using design file state_mgr.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: state_mgr File: /home/caden/github/datatape/state_mgr.v Line: 7
-Info (12128): Elaborating entity "state_mgr" for hierarchy "state_mgr:director" File: /home/caden/github/datatape/datatape.v Line: 179
-Warning (10036): Verilog HDL or VHDL warning at state_mgr.v(37): object "rx_packet_data" assigned a value but never read File: /home/caden/github/datatape/state_mgr.v Line: 37
-Warning (10036): Verilog HDL or VHDL warning at state_mgr.v(56): object "current_state" assigned a value but never read File: /home/caden/github/datatape/state_mgr.v Line: 56
+Warning (10236): Verilog HDL Implicit Net warning at state_mgr.v(32): created implicit net for "vout_fifow_clock" File: /home/caden/github/datatape/state_mgr.v Line: 32
+Info (12128): Elaborating entity "state_mgr" for hierarchy "state_mgr:director" File: /home/caden/github/datatape/datatape.v Line: 180
+Warning (10036): Verilog HDL or VHDL warning at state_mgr.v(32): object "vout_fifow_clock" assigned a value but never read File: /home/caden/github/datatape/state_mgr.v Line: 32
+Warning (10036): Verilog HDL or VHDL warning at state_mgr.v(36): object "rx_packet_data" assigned a value but never read File: /home/caden/github/datatape/state_mgr.v Line: 36
+Warning (10036): Verilog HDL or VHDL warning at state_mgr.v(55): object "current_state" assigned a value but never read File: /home/caden/github/datatape/state_mgr.v Line: 55
 Warning (10034): Output port "tx_data" at state_mgr.v(19) has no driver File: /home/caden/github/datatape/state_mgr.v Line: 19
 Warning (10034): Output port "tx_ready[0]" at state_mgr.v(20) has no driver File: /home/caden/github/datatape/state_mgr.v Line: 20
 Warning (10034): Output port "tx_last[0]" at state_mgr.v(21) has no driver File: /home/caden/github/datatape/state_mgr.v Line: 21
 Warning (10034): Output port "vout_fifow_data" at state_mgr.v(24) has no driver File: /home/caden/github/datatape/state_mgr.v Line: 24
-Warning (10034): Output port "vout_fifow_request[0]" at state_mgr.v(26) has no driver File: /home/caden/github/datatape/state_mgr.v Line: 26
+Warning (10034): Output port "vout_fifow_request[0]" at state_mgr.v(25) has no driver File: /home/caden/github/datatape/state_mgr.v Line: 25
+Warning (12158): Entity "state_mgr" contains only dangling pins File: /home/caden/github/datatape/datatape.v Line: 180
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "pll_rst[0]" is missing source, defaulting to GND File: /home/caden/github/datatape/datatape.v Line: 42
 Warning (14284): Synthesized away the following node(s):
@@ -10129,10 +10129,10 @@ Info (21057): Implemented 4035 device resources after synthesis - the final reso
     Info (21061): Implemented 3857 logic cells
     Info (21064): Implemented 71 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 212 warnings
-    Info: Peak virtual memory: 577 megabytes
-    Info: Processing ended: Wed Aug 19 20:39:36 2020
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:29
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 213 warnings
+    Info: Peak virtual memory: 573 megabytes
+    Info: Processing ended: Wed Aug 19 21:37:08 2020
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:28
 
 

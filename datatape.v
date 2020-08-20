@@ -72,9 +72,11 @@ wire [3:0]	video_out_fifor_data;
 wire [0:0]	video_out_fifor_ack;
 wire [0:0]	video_out_fifor_empty;
 wire [8:0]	video_out_fifor_used_words;
+reg [0:0]	video_out_fifow_write_request;
 
-wire [3:0]	video_out_fifow_data;
-wire [0:0]	video_out_fifow_request;
+
+reg [3:0]	video_out_fifow_data;
+reg [0:0]	video_out_fifow_request;
 wire [8:0]	video_out_fifow_used_words;
 
 // DAC Assignments
@@ -173,7 +175,6 @@ state_mgr director(
 	.tx_last(tx_last),
 	
 	.vout_fifow_data(video_out_fifow_data),
-	.vout_fifow_clock(video_out_fifow_clk),
 	.vout_fifow_request(video_out_fifow_request),
 	.vout_fifow_used_words(video_out_fifow_used_words)
 );
