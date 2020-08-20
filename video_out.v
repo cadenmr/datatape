@@ -17,32 +17,11 @@ module video_out(
 	output reg [0:0]	sync,
 	
 	// FIFO Data I/O
-	input wire [3:0]	fifow_data,
-	input wire [0:0]	fifow_clock,		// Data input clock (125 MHz from eth_mgr)
-	input wire [0:0]	fifow_request,
-	output wire [10:0] fifow_used_words
+	input wire 	[3:0]		fifor_data,
+	output reg [0:0]		fifor_acknowledge,
+	input wire 	[0:0]		fifor_empty,
+	input wire 	[10:0]	fifor_used_words
 );
-	
-// Input data buffer
-video_out_fifo video_output_buffer(
-
-	.q(fifor_data),					// Read data
-	.rdclk(clk),						// Read clock (6.293761309 MHz NTSC System Clock)
-	.rdreq(fifor_acknowledge),		// Read acknowledge
-	.rdempty(fifor_empty),			// FIFO Empty - Synchronized to read clock
-	.rdusedw(fifor_used_words),	// FIFO Used words count - Synchronized to read clock
-	
-	.data(fifow_data), 				// Write data
-	.wrclk(fifow_clk),				// Write clock (125 MHz from eth_mgr)
-	.wrreq(fifow_request),			// Write acknowledge
-	.wrusedw(fifow_used_words)		// FIFO Used words count - Synchronized to write clock
-);
-
-// FIFO Read Registers
-wire	[3:0]		fifor_data;
-reg	[0:0]		fifor_acknowledge;
-wire	[0:0]		fifor_empty;
-wire	[10:0]	fifor_used_words;
 
 // Video Registers
 reg [15:0] pixel_count;

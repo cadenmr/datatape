@@ -22,32 +22,32 @@ KEY[0] => rst[0].IN3
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-LEDG[0] << <GND>
-LEDG[1] << <GND>
-LEDG[2] << <GND>
-LEDG[3] << <GND>
-LEDG[4] << <GND>
-LEDG[5] << <GND>
-LEDG[6] << <GND>
-LEDG[7] << <GND>
-LEDR[0] << <GND>
-LEDR[1] << <GND>
-LEDR[2] << <GND>
-LEDR[3] << <GND>
-LEDR[4] << <GND>
-LEDR[5] << <GND>
-LEDR[6] << <GND>
-LEDR[7] << <GND>
-LEDR[8] << <GND>
-LEDR[9] << <GND>
-LEDR[10] << <GND>
-LEDR[11] << <GND>
-LEDR[12] << <GND>
-LEDR[13] << <GND>
-LEDR[14] << <GND>
-LEDR[15] << <GND>
-LEDR[16] << <GND>
-LEDR[17] << <GND>
+LEDG[0] <= <GND>
+LEDG[1] <= <GND>
+LEDG[2] <= <GND>
+LEDG[3] <= <GND>
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= <GND>
+LEDG[7] <= <GND>
+LEDR[0] <= <GND>
+LEDR[1] <= <GND>
+LEDR[2] <= <GND>
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+LEDR[10] <= <GND>
+LEDR[11] <= <GND>
+LEDR[12] <= <GND>
+LEDR[13] <= <GND>
+LEDR[14] <= <GND>
+LEDR[15] <= <GND>
+LEDR[16] <= <GND>
+LEDR[17] <= <GND>
 TD_DATA[0] => TD_DATA[0].IN1
 TD_DATA[1] => TD_DATA[1].IN1
 TD_DATA[2] => TD_DATA[2].IN1
@@ -59,39 +59,39 @@ TD_DATA[7] => TD_DATA[7].IN1
 TD_HS => ~NO_FANOUT~
 TD_VS => ~NO_FANOUT~
 TD_CLK27 => TD_CLK27.IN1
-VGA_R[0] << video_out:out.video_out
-VGA_R[1] << video_out:out.video_out
-VGA_R[2] << video_out:out.video_out
-VGA_R[3] << video_out:out.video_out
-VGA_R[4] << video_out:out.video_out
-VGA_R[5] << video_out:out.video_out
-VGA_R[6] << video_out:out.video_out
-VGA_R[7] << video_out:out.video_out
-VGA_G[0] << video_out:out.video_out
-VGA_G[1] << video_out:out.video_out
-VGA_G[2] << video_out:out.video_out
-VGA_G[3] << video_out:out.video_out
-VGA_G[4] << video_out:out.video_out
-VGA_G[5] << video_out:out.video_out
-VGA_G[6] << video_out:out.video_out
-VGA_G[7] << video_out:out.video_out
-VGA_B[0] << video_out:out.video_out
-VGA_B[1] << video_out:out.video_out
-VGA_B[2] << video_out:out.video_out
-VGA_B[3] << video_out:out.video_out
-VGA_B[4] << video_out:out.video_out
-VGA_B[5] << video_out:out.video_out
-VGA_B[6] << video_out:out.video_out
-VGA_B[7] << video_out:out.video_out
-VGA_CLK << clk_ntsc[0].DB_MAX_OUTPUT_PORT_TYPE
-VGA_BLANK_N << <VCC>
-VGA_SYNC_N << video_out:out.sync
-ENET0_GTX_CLK << ethernet:eth0.rgmii_tx_clk
-ENET0_TX_DATA[0] << ethernet:eth0.rgmii_tx_data
-ENET0_TX_DATA[1] << ethernet:eth0.rgmii_tx_data
-ENET0_TX_DATA[2] << ethernet:eth0.rgmii_tx_data
-ENET0_TX_DATA[3] << ethernet:eth0.rgmii_tx_data
-ENET0_TX_EN << ethernet:eth0.rgmii_tx_en
+VGA_R[0] <= video_out:out.video_out
+VGA_R[1] <= video_out:out.video_out
+VGA_R[2] <= video_out:out.video_out
+VGA_R[3] <= video_out:out.video_out
+VGA_R[4] <= video_out:out.video_out
+VGA_R[5] <= video_out:out.video_out
+VGA_R[6] <= video_out:out.video_out
+VGA_R[7] <= video_out:out.video_out
+VGA_G[0] <= video_out:out.video_out
+VGA_G[1] <= video_out:out.video_out
+VGA_G[2] <= video_out:out.video_out
+VGA_G[3] <= video_out:out.video_out
+VGA_G[4] <= video_out:out.video_out
+VGA_G[5] <= video_out:out.video_out
+VGA_G[6] <= video_out:out.video_out
+VGA_G[7] <= video_out:out.video_out
+VGA_B[0] <= video_out:out.video_out
+VGA_B[1] <= video_out:out.video_out
+VGA_B[2] <= video_out:out.video_out
+VGA_B[3] <= video_out:out.video_out
+VGA_B[4] <= video_out:out.video_out
+VGA_B[5] <= video_out:out.video_out
+VGA_B[6] <= video_out:out.video_out
+VGA_B[7] <= video_out:out.video_out
+VGA_CLK <= clk_ntsc[0].DB_MAX_OUTPUT_PORT_TYPE
+VGA_BLANK_N <= <VCC>
+VGA_SYNC_N <= video_out:out.sync
+ENET0_GTX_CLK <= ethernet:eth0.rgmii_tx_clk
+ENET0_TX_DATA[0] <= ethernet:eth0.rgmii_tx_data
+ENET0_TX_DATA[1] <= ethernet:eth0.rgmii_tx_data
+ENET0_TX_DATA[2] <= ethernet:eth0.rgmii_tx_data
+ENET0_TX_DATA[3] <= ethernet:eth0.rgmii_tx_data
+ENET0_TX_EN <= ethernet:eth0.rgmii_tx_en
 ENET0_RX_CLK => ENET0_RX_CLK.IN1
 ENET0_RX_DATA[0] => ENET0_RX_DATA[0].IN1
 ENET0_RX_DATA[1] => ENET0_RX_DATA[1].IN1
@@ -334,38 +334,7 @@ inclk[1] => pll1.CLK1
 locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out
-rst[0] => ~NO_FANOUT~
-clk[0] => clk[0].IN1
-video_out[0] <= video_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-video_out[1] <= video_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-video_out[2] <= video_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-video_out[3] <= video_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-video_out[4] <= video_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-video_out[5] <= video_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-video_out[6] <= video_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-video_out[7] <= video_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sync[0] <= sync[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-fifow_data[0] => fifow_data[0].IN1
-fifow_data[1] => fifow_data[1].IN1
-fifow_data[2] => fifow_data[2].IN1
-fifow_data[3] => fifow_data[3].IN1
-fifow_clock[0] => ~NO_FANOUT~
-fifow_request[0] => fifow_request[0].IN1
-fifow_used_words[0] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[1] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[2] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[3] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[4] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[5] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[6] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[7] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[8] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[9] <= video_out_fifo:video_output_buffer.wrusedw
-fifow_used_words[10] <= video_out_fifo:video_output_buffer.wrusedw
-
-
-|datatape|video_out:out|video_out_fifo:video_output_buffer
+|datatape|video_out_fifo:video_output_buffer
 data[0] => data[0].IN1
 data[1] => data[1].IN1
 data[2] => data[2].IN1
@@ -407,7 +376,7 @@ wrusedw[7] <= dcfifo:dcfifo_component.wrusedw
 wrusedw[8] <= dcfifo:dcfifo_component.wrusedw
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component
 data[0] => dcfifo_4cg1:auto_generated.data[0]
 data[1] => dcfifo_4cg1:auto_generated.data[1]
 data[2] => dcfifo_4cg1:auto_generated.data[2]
@@ -455,7 +424,7 @@ wrusedw[7] <= dcfifo_4cg1:auto_generated.wrusedw[7]
 wrusedw[8] <= dcfifo_4cg1:auto_generated.wrusedw[8]
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated
 data[0] => altsyncram_t121:fifo_ram.data_a[0]
 data[1] => altsyncram_t121:fifo_ram.data_a[1]
 data[2] => altsyncram_t121:fifo_ram.data_a[2]
@@ -535,7 +504,7 @@ wrusedw[7] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
 wrusedw[8] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_gray2bin_6ib:rdptr_g_gray2bin
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_gray2bin_6ib:rdptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -559,7 +528,7 @@ gray[9] => bin[9].DATAIN
 gray[9] => xor8.IN0
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_gray2bin_6ib:rs_dgwp_gray2bin
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_gray2bin_6ib:rs_dgwp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -583,7 +552,7 @@ gray[9] => bin[9].DATAIN
 gray[9] => xor8.IN0
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_gray2bin_6ib:wrptr_g_gray2bin
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_gray2bin_6ib:wrptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -607,7 +576,7 @@ gray[9] => bin[9].DATAIN
 gray[9] => xor8.IN0
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_gray2bin_6ib:ws_dgrp_gray2bin
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_gray2bin_6ib:ws_dgrp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -631,7 +600,7 @@ gray[9] => bin[9].DATAIN
 gray[9] => xor8.IN0
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_graycounter_3p6:rdptr_g1p
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_graycounter_3p6:rdptr_g1p
 clock => counter5a0.CLK
 clock => counter5a1.CLK
 clock => counter5a2.CLK
@@ -670,7 +639,7 @@ q[8] <= counter5a8.DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= counter5a9.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_graycounter_v6c:wrptr_g1p
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|a_graycounter_v6c:wrptr_g1p
 clock => counter8a0.CLK
 clock => counter8a1.CLK
 clock => counter8a2.CLK
@@ -709,7 +678,7 @@ q[8] <= counter8a8.DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= counter8a9.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|altsyncram_t121:fifo_ram
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|altsyncram_t121:fifo_ram
 address_a[0] => ram_block11a0.PORTAADDR
 address_a[0] => ram_block11a1.PORTAADDR
 address_a[0] => ram_block11a2.PORTAADDR
@@ -912,7 +881,7 @@ wren_a => ram_block11a7.PORTAWE
 wren_a => ram_block11a7.ENA0
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|dffpipe_909:rs_brp
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|dffpipe_909:rs_brp
 clock => dffe12a[9].CLK
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
@@ -945,7 +914,7 @@ q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffe12a[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|dffpipe_909:rs_bwp
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|dffpipe_909:rs_bwp
 clock => dffe12a[9].CLK
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
@@ -978,7 +947,7 @@ q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffe12a[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|alt_synch_pipe_pal:rs_dgwp
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|alt_synch_pipe_pal:rs_dgwp
 clock => dffpipe_a09:dffpipe13.clock
 d[0] => dffpipe_a09:dffpipe13.d[0]
 d[1] => dffpipe_a09:dffpipe13.d[1]
@@ -1002,7 +971,7 @@ q[8] <= dffpipe_a09:dffpipe13.q[8]
 q[9] <= dffpipe_a09:dffpipe13.q[9]
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|alt_synch_pipe_pal:rs_dgwp|dffpipe_a09:dffpipe13
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|alt_synch_pipe_pal:rs_dgwp|dffpipe_a09:dffpipe13
 clock => dffe14a[9].CLK
 clock => dffe14a[8].CLK
 clock => dffe14a[7].CLK
@@ -1045,7 +1014,7 @@ q[8] <= dffe15a[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffe15a[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|dffpipe_909:ws_brp
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|dffpipe_909:ws_brp
 clock => dffe12a[9].CLK
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
@@ -1078,7 +1047,7 @@ q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffe12a[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|dffpipe_909:ws_bwp
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|dffpipe_909:ws_bwp
 clock => dffe12a[9].CLK
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
@@ -1111,7 +1080,7 @@ q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffe12a[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|alt_synch_pipe_qal:ws_dgrp
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|alt_synch_pipe_qal:ws_dgrp
 clock => dffpipe_b09:dffpipe16.clock
 d[0] => dffpipe_b09:dffpipe16.d[0]
 d[1] => dffpipe_b09:dffpipe16.d[1]
@@ -1135,7 +1104,7 @@ q[8] <= dffpipe_b09:dffpipe16.q[8]
 q[9] <= dffpipe_b09:dffpipe16.q[9]
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|alt_synch_pipe_qal:ws_dgrp|dffpipe_b09:dffpipe16
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|alt_synch_pipe_qal:ws_dgrp|dffpipe_b09:dffpipe16
 clock => dffe17a[9].CLK
 clock => dffe17a[8].CLK
 clock => dffe17a[7].CLK
@@ -1178,7 +1147,7 @@ q[8] <= dffe18a[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffe18a[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|cmpr_n76:rdempty_eq_comp
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|cmpr_n76:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1202,7 +1171,7 @@ datab[8] => data_wire[6].IN1
 datab[9] => data_wire[6].IN1
 
 
-|datatape|video_out:out|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|cmpr_n76:wrfull_eq_comp
+|datatape|video_out_fifo:video_output_buffer|dcfifo:dcfifo_component|dcfifo_4cg1:auto_generated|cmpr_n76:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1224,6 +1193,87 @@ datab[6] => data_wire[5].IN1
 datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 datab[9] => data_wire[6].IN1
+
+
+|datatape|video_out:out
+rst[0] => ~NO_FANOUT~
+clk[0] => video_out[0]~reg0.CLK
+clk[0] => video_out[1]~reg0.CLK
+clk[0] => video_out[2]~reg0.CLK
+clk[0] => video_out[3]~reg0.CLK
+clk[0] => video_out[4]~reg0.CLK
+clk[0] => video_out[5]~reg0.CLK
+clk[0] => video_out[6]~reg0.CLK
+clk[0] => video_out[7]~reg0.CLK
+clk[0] => sync[0]~reg0.CLK
+clk[0] => line_count[0].CLK
+clk[0] => line_count[1].CLK
+clk[0] => line_count[2].CLK
+clk[0] => line_count[3].CLK
+clk[0] => line_count[4].CLK
+clk[0] => line_count[5].CLK
+clk[0] => line_count[6].CLK
+clk[0] => line_count[7].CLK
+clk[0] => line_count[8].CLK
+clk[0] => line_count[9].CLK
+clk[0] => line_count[10].CLK
+clk[0] => line_count[11].CLK
+clk[0] => line_count[12].CLK
+clk[0] => line_count[13].CLK
+clk[0] => line_count[14].CLK
+clk[0] => line_count[15].CLK
+clk[0] => pixel_count[0].CLK
+clk[0] => pixel_count[1].CLK
+clk[0] => pixel_count[2].CLK
+clk[0] => pixel_count[3].CLK
+clk[0] => pixel_count[4].CLK
+clk[0] => pixel_count[5].CLK
+clk[0] => pixel_count[6].CLK
+clk[0] => pixel_count[7].CLK
+clk[0] => pixel_count[8].CLK
+clk[0] => pixel_count[9].CLK
+clk[0] => pixel_count[10].CLK
+clk[0] => pixel_count[11].CLK
+clk[0] => pixel_count[12].CLK
+clk[0] => pixel_count[13].CLK
+clk[0] => pixel_count[14].CLK
+clk[0] => pixel_count[15].CLK
+clk[0] => fifor_acknowledge[0]~reg0.CLK
+clk[0] => even_field~2.DATAIN
+video_out[0] <= video_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+video_out[1] <= video_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+video_out[2] <= video_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+video_out[3] <= video_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+video_out[4] <= video_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+video_out[5] <= video_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+video_out[6] <= video_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+video_out[7] <= video_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sync[0] <= sync[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+fifor_data[0] => Decoder0.IN3
+fifor_data[1] => Decoder0.IN2
+fifor_data[2] => Decoder0.IN1
+fifor_data[3] => Decoder0.IN0
+fifor_acknowledge[0] <= fifor_acknowledge[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+fifor_empty[0] => video_out.OUTPUTSELECT
+fifor_empty[0] => video_out.OUTPUTSELECT
+fifor_empty[0] => video_out.OUTPUTSELECT
+fifor_empty[0] => video_out.OUTPUTSELECT
+fifor_empty[0] => video_out.OUTPUTSELECT
+fifor_empty[0] => video_out.OUTPUTSELECT
+fifor_empty[0] => video_out.OUTPUTSELECT
+fifor_empty[0] => fifor_acknowledge.DATAB
+fifor_empty[0] => fifor_acknowledge.DATAB
+fifor_used_words[0] => ~NO_FANOUT~
+fifor_used_words[1] => ~NO_FANOUT~
+fifor_used_words[2] => ~NO_FANOUT~
+fifor_used_words[3] => ~NO_FANOUT~
+fifor_used_words[4] => ~NO_FANOUT~
+fifor_used_words[5] => ~NO_FANOUT~
+fifor_used_words[6] => ~NO_FANOUT~
+fifor_used_words[7] => ~NO_FANOUT~
+fifor_used_words[8] => ~NO_FANOUT~
+fifor_used_words[9] => ~NO_FANOUT~
+fifor_used_words[10] => ~NO_FANOUT~
 
 
 |datatape|video_in:in
@@ -22350,7 +22400,7 @@ status_good_frame <= good_frame_reg.DB_MAX_OUTPUT_PORT_TYPE
 
 |datatape|state_mgr:director
 rst[0] => ~NO_FANOUT~
-clk[0] => ~NO_FANOUT~
+clk[0] => vout_fifow_clock[0].DATAIN
 rx_data[0] => ~NO_FANOUT~
 rx_data[1] => ~NO_FANOUT~
 rx_data[2] => ~NO_FANOUT~
@@ -22377,7 +22427,7 @@ vout_fifow_data[0] <= <GND>
 vout_fifow_data[1] <= <GND>
 vout_fifow_data[2] <= <GND>
 vout_fifow_data[3] <= <GND>
-vout_fifow_clock[0] <= <GND>
+vout_fifow_clock[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
 vout_fifow_request[0] <= <GND>
 vout_fifow_used_words[0] => ~NO_FANOUT~
 vout_fifow_used_words[1] => ~NO_FANOUT~

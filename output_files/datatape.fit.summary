@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Aug 19 15:52:01 2020
+Fitter Status : Successful - Wed Aug 19 20:40:02 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : datatape
 Top-level Entity Name : datatape
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 3,569 / 114,480 ( 3 % )
-    Total combinational functions : 2,761 / 114,480 ( 2 % )
-    Dedicated logic registers : 2,243 / 114,480 ( 2 % )
-Total registers : 2255
+Total logic elements : 3,512 / 114,480 ( 3 % )
+    Total combinational functions : 2,718 / 114,480 ( 2 % )
+    Dedicated logic registers : 2,218 / 114,480 ( 2 % )
+Total registers : 2230
 Total pins : 99 / 529 ( 19 % )
 Total virtual pins : 0
-Total memory bits : 104,448 / 3,981,312 ( 3 % )
+Total memory bits : 102,408 / 3,981,312 ( 3 % )
 Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
 Total PLLs : 2 / 4 ( 50 % )

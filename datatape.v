@@ -67,11 +67,15 @@ wire [7:0]	tx_data;
 wire [0:0]	tx_ready;
 wire [0:0]	tx_last;
 
-// Transfer between video_out and state_mgr
+// Video_out FIFO variables
+wire [3:0]	video_out_fifor_data;
+wire [0:0]	video_out_fifor_ack;
+wire [0:0]	video_out_fifor_empty;
+wire [8:0]	video_out_fifor_used_words;
+
 wire [3:0]	video_out_fifow_data;
-wire [0:0]	video_out_fifow_clk;
 wire [0:0]	video_out_fifow_request;
-wire [10:0]	video_out_fifow_used_words;
+wire [8:0]	video_out_fifow_used_words;
 
 // DAC Assignments
 assign VGA_CLK = clk_ntsc; // System Pixel Clock
@@ -96,6 +100,20 @@ pll_125 pll2(
 	CLOCK_50,
 	clk_125);
 
+video_out_fifo video_output_buffer(
+
+	.q(video_out_fifor_data),
+	.rdclk(clk_ntsc),								// 6.293761309 MHz NTSC System Clock
+	.rdreq(video_out_fifor_ack),
+	.rdempty(video_out_fifor_empty),
+	.rdusedw(video_out_fifor_used_words),
+	
+	.data(video_out_fifow_data),
+	.wrclk(clk_125),								// 125 MHz Ethernet Clock
+	.wrreq(video_out_fifow_write_request),
+	.wrusedw(video_out_fifow_used_words)
+);
+	
 video_out out(
 
 	.rst(rst),
@@ -104,10 +122,10 @@ video_out out(
 	.video_out(output_video),
 	.sync(VGA_SYNC_N),
 	
-	.fifow_data(video_out_fifow_data),
-	.fifow_clock(video_out_fifow_clk),
-	.fifow_request(video_out_fifow_request),
-	.fifow_used_words(video_out_fifow_used_words)
+	.fifor_data(video_out_fifor_data),
+	.fifor_acknowledge(video_our_fifor_ack),
+	.fifor_empty(video_out_fifor_empty),
+	.fifor_used_words(video_out_fifor_used_words)
 );
 
 video_in in(TD_CLK27, 
