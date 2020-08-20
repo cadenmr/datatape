@@ -21,16 +21,16 @@ module state_mgr(
 	output wire [0:0]	tx_last,
 	
 	// Communication with video_out
-	output wire [3:0]	vout_fifow_data,
+	output reg	[3:0]	vout_fifow_data,
 	output wire [0:0]	vout_fifow_clock,
-	output wire [0:0]	vout_fifow_request,
+	output reg	[0:0]	vout_fifow_request,
 	input wire [10:0]	vout_fifow_used_words
 	
 	// Communication with video_in
 	// TBD
 );
 
-assign fifow_clock = clk;	// FIFO Read clock is the same as the ethernet clock (125 MHz)
+assign vout_fifow_clock = clk;	// FIFO Read clock is the same as the ethernet clock (125 MHz)
 
 // Ethernet packat parser
 reg [3:0] rx_packet_command;
