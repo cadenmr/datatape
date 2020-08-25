@@ -150,14 +150,7 @@ ethernet eth0(
 	.rgmii_tx_en(ENET0_TX_EN),
 	
 	.rx_data(rx_data),
-	.rx_valid(rx_valid),
-	.rx_ready(rx_ready),
-	.rx_last(rx_last),
-	.rx_user(rx_user),
-	
-	.tx_data(tx_data),
-	.tx_ready(tx_ready),
-	.tx_last(tx_last)
+	.rx_ready(rx_ready)
 );
 
 state_mgr director(
@@ -165,14 +158,7 @@ state_mgr director(
 	.clk(clk_125),
 	
 	.rx_data(rx_data),
-	.rx_valid(rx_valid),
 	.rx_ready(rx_ready),
-	.rx_last(rx_last),
-	.rx_user(rx_user),
-	
-	.tx_data(tx_data),
-	.tx_ready(tx_ready),
-	.tx_last(tx_last),
 	
 	.vout_fifow_data(video_out_fifow_data),
 	.vout_fifow_request(video_out_fifow_request),

@@ -1,5 +1,5 @@
 Assembler report for datatape
-Wed Aug 19 21:37:37 2020
+Mon Aug 24 23:59:48 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Aug 19 21:37:37 2020 ;
+; Assembler Status      ; Successful - Mon Aug 24 23:59:48 2020 ;
 ; Revision Name         ; datatape                              ;
 ; Top-level Entity Name ; datatape                              ;
 ; Family                ; Cyclone IV E                          ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-----------------------+
 ; Option         ; Setting               ;
 +----------------+-----------------------+
-; JTAG usercode  ; 0x0074EF61            ;
-; Checksum       ; 0x0074EF61            ;
+; JTAG usercode  ; 0x0074CB3E            ;
+; Checksum       ; 0x0074CB3E            ;
 +----------------+-----------------------+
 
 
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Aug 19 21:37:35 2020
+    Info: Processing started: Mon Aug 24 23:59:46 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off datatape -c datatape
 Warning (125092): Tcl Script File pll.qip not found
     Info (125063): set_global_assignment -name QIP_FILE pll.qip
@@ -90,8 +90,8 @@ Warning (18236): Number of processors has not been specified which may cause ove
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 375 megabytes
-    Info: Processing ended: Wed Aug 19 21:37:37 2020
+    Info: Peak virtual memory: 372 megabytes
+    Info: Processing ended: Mon Aug 24 23:59:48 2020
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

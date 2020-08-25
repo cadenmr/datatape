@@ -1,4 +1,10 @@
 
+State Machine - |datatape|state_mgr:director|system_state
+Name system_state.00000000 system_state.00000010 system_state.00000001 
+system_state.00000000 0 0 0 
+system_state.00000001 1 0 1 
+system_state.00000010 1 1 0 
+
 State Machine - |datatape|ethernet:eth0|udp_complete:udp_complete_inst|udp:udp_inst|udp_ip_tx:udp_ip_tx_inst|state_reg
 Name state_reg.STATE_WRITE_PAYLOAD_LAST state_reg.STATE_WRITE_PAYLOAD state_reg.STATE_WRITE_HEADER state_reg.STATE_IDLE state_reg.STATE_WAIT_LAST 
 state_reg.STATE_IDLE 0 0 0 0 0 

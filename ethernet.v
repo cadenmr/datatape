@@ -16,36 +16,47 @@ module ethernet(
 	output wire [0:0]	rgmii_tx_clk,
 	output wire [3:0]	rgmii_tx_data,
 	output wire [0:0] rgmii_tx_en,
-	
-	// Payload Data
-	output wire [7:0]	rx_data,
-	output wire [0:0]	rx_valid,
+
+	// Data
 	output wire [0:0]	rx_ready,
-	output wire [0:0]	rx_last,
-	output wire [0:0]	rx_user,
-	
-	input wire [7:0]	tx_data,
+	output wire [3:0]	rx_data,
+
 	input wire [0:0]	tx_ready,
-	input wire [0:0]	tx_last
+	input wire [3:0]	tx_command,
+	input wire [3:0]	tx_data
 );
 
-assign rx_data		= rx_fifo_udp_payload_axis_tdata;
-assign rx_valid	= rx_fifo_udp_payload_axis_tvalid;
-assign rx_ready	= rx_fifo_udp_payload_axis_tready;
-assign rx_last		= rx_fifo_udp_payload_axis_tlast;
-assign rx_user		= rx_fifo_udp_payload_axis_tuser;
-
-assign tx_fifo_udp_payload_axis_tdata	= tx_data;
-assign tx_fifo_udp_payload_axis_tready	= tx_ready;
-assign tx_fifo_udp_payload_axis_tlast	= tx_last;
-assign tx_fifo_udp_payload_axis_tvalid	= 1;	// Output data should always be valid.
-assign tx_fifo_udp_payload_axis_tuser	= 0;		// Output data should always be valid.
-
 // IP Configuration
-wire [47:0] local_mac   = 48'h02_00_00_00_00_00;
+wire [47:0] local_mac   = 48'h02_00_00_00_00_00;				// 02:00:00:00:00:00
+wire [15:0]	local_port	= 16'd8887;									// 8887
 wire [31:0] local_ip    = {8'd10, 8'd42, 8'd0,   8'd164};	// 10.42.0.164
-wire [31:0] gateway_ip  = {8'd0, 8'd0, 8'd0,   8'd0};
-wire [31:0] subnet_mask = {8'd0, 8'd0, 8'd0, 8'd0};
+wire [31:0] gateway_ip  = {8'd0, 8'd0, 8'd0,   8'd0};			// 00.00.0.000
+wire [31:0] subnet_mask = {8'd0, 8'd0, 8'd0, 8'd0};			// 00.00.0.000
+
+// Logic Registers
+reg [3:0]	rx_ready_reg;
+reg [3:0]	rx_data_reg;
+
+// Data Logic
+always @(posedge clk) begin
+
+	// RX Data pre-verification
+	if (rx_udp_payload_axis_tvalid &&  rx_udp_payload_axis_tready) begin
+		if (rx_udp_dest_port == local_port && rx_udp_length ==  'd9) begin
+		
+			rx_ready_reg	= 'b1;
+			rx_data_reg		= rx_udp_payload_axis_tdata;
+			
+		end else begin
+		
+			rx_ready_reg	= 'b0;
+		
+		end
+	end
+end
+
+// Constant Assignments
+assign tx_udp_ip_dest_ip	= rx_udp_ip_source_ip;
 
 // AXI between MAC and Ethernet
 wire [7:0] rx_axis_tdata;
